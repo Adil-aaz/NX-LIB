@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека | NX-LIB - Цифровой Архив Знаний</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">NX-LIB</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link active">Каталог</a>
+                <a href="membership.html" class="nav-link">Подписка</a>
+                <a href="about.html" class="nav-link">О Нас</a>
+                <button class="btn-login" id="openLogin">Войти</button>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link active">Каталог</a>
+        <a href="membership.html" class="nav-link">Подписка</a>
+        <a href="about.html" class="nav-link">О Нас</a>
+        <button class="btn-login" id="openLoginMobile">Войти</button>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Header Stats -->
+    <header class="hero section">
+        <canvas id="heroCanvas"></canvas>
+        <div class="container">
+            <div class="grid-2 hero-grid-mobile" style="align-items: flex-end; gap: 40px;">
+                <div class="reveal">
+                    <span
+                        style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem;">Исследуйте
+                        архив</span>
+                    <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-top: 1rem; line-height: 1.1;">Каталог знаний.
+                    </h1>
+                    <p style="margin-top: 1.5rem; max-width: 500px; color: var(--text-secondary);">Более 2.4 миллионов
+                        оцифрованных изданий в свободном и защищенном доступе для участников NX-LIB.</p>
+                </div>
+                <div class="reveal" style="display: flex; gap: 40px; margin-bottom: 10px;">
+                    <div>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 800;">2.4M</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Книг
+                        </div>
+                    </div>
+                    <div>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 800;">850K</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">
+                            Авторов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search & Quick Filters -->
+    <section class="section" style="padding-top: 0;">
+        <div class="catalog-container">
+            <!-- Search Bar -->
+            <div style="margin-bottom: 40px; margin-top: 25px;" class="reveal">
+                <div style="position: relative; display: flex; align-items: center;">
+                    <i class="fas fa-search" style="position: absolute; left: 20px; color: var(--text-secondary);"></i>
+                    <input type="text" id="catalogSearch" placeholder="Поиск по названию, автору или ISBN..."
+                        style="width: 100%; padding: 20px 20px 20px 55px; border: 1px solid var(--border-color); border-radius: 8px; outline: none; background: var(--bg-secondary); font-size: 1rem; transition: border-color 0.3s;">
+                </div>
+            </div>
+
+            <!-- Genre Tags -->
+            <div class="reveal" style="margin-bottom: 60px;">
+                <h4
+                    style="margin-bottom: 20px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">
+                    Популярные жанры</h4>
+                <div id="genreFilters" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn btn-outline genre-btn active" data-genre="all"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;">Все жанры</button>
+                    <button class="btn btn-outline genre-btn" data-genre="Киберпанк"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i class="fas fa-microchip"
+                            style="margin-right: 8px;"></i>Киберпанк</button>
+                    <button class="btn btn-outline genre-btn" data-genre="Наука"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i class="fas fa-vial"
+                            style="margin-right: 8px;"></i>Наука</button>
+                    <button class="btn btn-outline genre-btn" data-genre="Бизнес"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i class="fas fa-user-tie"
+                            style="margin-right: 8px;"></i>Бизнес</button>
+                    <button class="btn btn-outline genre-btn" data-genre="Дизайн"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i
+                            class="fas fa-paint-brush" style="margin-right: 8px;"></i>Дизайн</button>
+                    <button class="btn btn-outline genre-btn" data-genre="История"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i class="fas fa-history"
+                            style="margin-right: 8px;"></i>История</button>
+                    <button class="btn btn-outline genre-btn" data-genre="IT"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i class="fas fa-code"
+                            style="margin-right: 8px;"></i>IT</button>
+                    <button class="btn btn-outline genre-btn" data-genre="Философия"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i class="fas fa-brain"
+                            style="margin-right: 8px;"></i>Философия</button>
+                    <button class="btn btn-outline genre-btn" data-genre="Психология"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i
+                            class="fas fa-user-friends" style="margin-right: 8px;"></i>Психология</button>
+                    <button class="btn btn-outline genre-btn" data-genre="Экономика"
+                        style="padding: 8px 16px; font-size: 0.85rem; border-radius: 30px;"><i class="fas fa-chart-line"
+                            style="margin-right: 8px;"></i>Экономика</button>
+                </div>
+            </div>
+
+            <!-- Dev Panel (Admin) -->
+            <div class="reveal"
+                style="background: var(--bg-secondary); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+                <h3 style="font-size: 1rem; margin-bottom: 20px; color: var(--accent);">Admin: Добавить Книгу в Базу
+                </h3>
+                <form id="addBookForm"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <input type="text" id="addTitle" placeholder="Название" required
+                        style="padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-primary); color: var(--text-primary);">
+                    <input type="text" id="addAuthor" placeholder="Автор" required
+                        style="padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-primary); color: var(--text-primary);">
+                    <input type="number" id="addPrice" placeholder="Цена" required
+                        style="padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-primary); color: var(--text-primary);">
+                    <input type="text" id="addImage" placeholder="URL обложки"
+                        style="padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-primary); color: var(--text-primary);">
+                    <button type="submit" class="btn btn-primary">Добавить в архив</button>
+                </form>
+            </div>
+
+            <!-- Catalog Layout -->
+            <div class="catalog-layout">
+
+                <!-- Sidebar Filters -->
+                <aside class="reveal catalog-sidebar" id="catalogSidebar">
+                    <div class="filter-group">
+                        <h4>Год издания</h4>
+                        <div id="yearFilters" style="display: flex; flex-direction: column; gap: 12px;">
+                            <label class="filter-option">
+                                <input type="checkbox" value="2020-2024"> 2020 — 2024
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="2010-2019"> 2010 — 2019
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="2000-2009"> 2000 — 2009
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="old"> Классика (До 2000)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Статус</h4>
+                        <div id="statusFilters" style="display: flex; flex-direction: column; gap: 12px;">
+                            <label class="filter-option">
+                                <input type="radio" name="status" value="all" checked> Все
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="status" value="free"> Доступно всем
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="status" value="vip"> Только для VIP
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Язык</h4>
+                        <select id="langFilter"
+                            style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-secondary); color: var(--text-primary); outline: none;">
+                            <option value="all">Все языки</option>
+                            <option value="ru">Русский</option>
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                        </select>
+                    </div>
+
+                    <div style="padding: 30px; background: var(--accent); border-radius: 8px; color: white;">
+                        <h5>Хотите больше?</h5>
+                        <p style="font-size: 0.85rem; margin: 15px 0 20px; opacity: 0.9;">Подписка VIP дает доступ к
+                            архивным документам и научным работам.</p>
+                        <a href="membership.html" class="btn"
+                            style="background: var(--bg-primary); color: var(--accent); padding: 10px 20px; font-size: 0.85rem; width: 100%; text-align: center;">Узнать
+                            больше</a>
+                    </div>
+                </aside>
+
+                <!-- Book Grid -->
+                <div class="reveal">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                        <span id="resultsCount" style="font-size: 0.9rem; color: var(--text-secondary);">Найдено 20
+                            изданий</span>
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <span style="font-size: 0.85rem;">Сортировать:</span>
+                            <select id="catalogSort"
+                                style="background: transparent; border: none; font-weight: 600; cursor: pointer; color: var(--text-primary); outline: none;">
+                                <option value="new">По новизне</option>
+                                <option value="rating">По рейтингу</option>
+                                <option value="title">По названию (А-Я)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="catalog-grid" id="bookGrid">
+                        <!-- Динамический контент загружается через JS -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div style="margin-top: 80px; display: flex; justify-content: center; gap: 10px;" class="reveal">
+                        <button class="btn btn-outline" style="padding: 10px 20px; border-radius: 4px;"><i
+                                class="fas fa-chevron-left"></i></button>
+                        <button class="btn btn-outline"
+                            style="padding: 10px 20px; border-radius: 4px; background: var(--accent); color: white; border-color: var(--accent);">1</button>
+                        <button class="btn btn-outline" style="padding: 10px 20px; border-radius: 4px;">2</button>
+                        <button class="btn btn-outline" style="padding: 10px 20px; border-radius: 4px;">3</button>
+                        <button class="btn btn-outline" style="padding: 10px 20px; border-radius: 4px;">...</button>
+                        <button class="btn btn-outline" style="padding: 10px 20px; border-radius: 4px;">120</button>
+                        <button class="btn btn-outline" style="padding: 10px 20px; border-radius: 4px;"><i
+                                class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Additional Recommendations Section -->
+    <header class="hero section">
+        <canvas id="heroCanvas"></canvas>
+        <div class="container">
+            <h2 class="reveal" style="margin-bottom: 60px;">Тренды этой недели</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;"
+                class="reveal">
+
+                <div
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; display: flex; gap: 25px; align-items: center; transition: transform 0.3s; background: var(--bg-primary);">
+                    <div style="width: 80px; height: 110px; flex-shrink: 0;">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=150"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 8px;">Молчание Ягнят</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Томас Харрис
+                        </p>
+                        <span
+                            style="font-size: 0.7rem; padding: 4px 8px; background: rgba(124, 58, 237, 0.1); color: var(--accent); border-radius: 4px; font-weight: 700;">#1
+                            В ТРИЛЛЕРАХ</span>
+                    </div>
+                </div>
+
+                <div
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; display: flex; gap: 25px; align-items: center; transition: transform 0.3s; background: var(--bg-primary);">
+                    <div style="width: 80px; height: 110px; flex-shrink: 0;">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=150"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 8px;">Космос</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Карл Саган</p>
+                        <span
+                            style="font-size: 0.7rem; padding: 4px 8px; background: rgba(124, 58, 237, 0.1); color: var(--accent); border-radius: 4px; font-weight: 700;">#1
+                            В НАУКЕ</span>
+                    </div>
+                </div>
+
+                <div
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; display: flex; gap: 25px; align-items: center; transition: transform 0.3s; background: var(--bg-primary);">
+                    <div style="width: 80px; height: 110px; flex-shrink: 0;">
+                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80&w=150"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 8px;">Имя Розы</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Умберто Эко
+                        </p>
+                        <span
+                            style="font-size: 0.7rem; padding: 4px 8px; background: rgba(124, 58, 237, 0.1); color: var(--accent); border-radius: 4px; font-weight: 700;">#1
+                            В ДЕТЕКТИВАХ</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-info">
+                        <div class="logo">NX-LIB</div>
+                        <p style="margin-top: 20px; opacity: 0.7; line-height: 1.6;">Ваша персональная цифровая
+                            библиотека.
+                            Миллионы книг в одно нажатие.</p>
+                        <div style="margin-top: 30px; display: flex; gap: 15px;">
+                            <a href="#" style="color: var(--text-primary); font-size: 1.2rem;"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#" style="color: var(--text-primary); font-size: 1.2rem;"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" style="color: var(--text-primary); font-size: 1.2rem;"><i
+                                    class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4 style="margin-bottom: 25px;">Архив</h4>
+                        <a href="#">Все книги</a>
+                        <a href="#">Авторы</a>
+                        <a href="#">Жанры</a>
+                        <a href="#">Новинки</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4 style="margin-bottom: 25px;">Аккаунт</h4>
+                        <a href="#">Профиль</a>
+                        <a href="membership.html">Подписка</a>
+                        <a href="#">Чек-лист чтений</a>
+                        <a href="#">Помощь</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4 style="margin-bottom: 25px;">Правовая инфо</h4>
+                        <a href="#">Лицензии</a>
+                        <a href="#">Конфиденциальность</a>
+                        <a href="#">Условия использования</a>
+                        <a href="#">Copyright</a>
+                    </div>
+                </div>
+                <div
+                    style="margin-top: 80px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                    <p style="font-size: 0.85rem; opacity: 0.5;">&copy; 2420 NX-LIB Systems. Все права защищены.</p>
+                    <div style="display: flex; gap: 30px;">
+                        <span style="font-size: 0.8rem; opacity: 0.5;">Status: Online</span>
+                        <span style="font-size: 0.8rem; opacity: 0.5;">Region: Global</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Login Modal -->
+        <div class="modal-overlay" id="loginModal">
+            <div class="modal-content">
+                <button class="close-modal" id="closeLogin">&times;</button>
+                <h3 style="margin-bottom: 2rem; text-align: center;">Вход в системный архив</h3>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="user@nexus.system" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Ключ доступа</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; margin-top: 1.5rem;">Авторизация</button>
+                </form>
+                <p style="text-align: center; margin-top: 25px; font-size: 0.85rem; color: var(--text-secondary);">
+                    Впервые здесь? <a href="register.html"
+                        style="color: var(--accent); font-weight: 600; text-decoration: none;">Регистрация архивиста</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- UI Elements -->
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="scrollBar"></div>
+        </div>
+
+        <button class="theme-toggle-btn" id="themeToggle" title="Переключить тему">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <nav class="mobile-dock">
+            <a href="index.html" class="dock-item">
+                <i class="fas fa-home"></i>
+                <span>Главная</span>
+            </a>
+            <a href="catalog.html" class="dock-item active">
+                <i class="fas fa-search"></i>
+                <span>Каталог</span>
+            </a>
+            <button class="dock-item" id="shareBtn" style="background: none; border: none; padding: 0;">
+                <i class="fas fa-share-alt"></i>
+                <span>Поделиться</span>
+            </button>
+            <a href="membership.html" class="dock-item">
+                <i class="fas fa-crown"></i>
+                <span>VIP</span>
+            </a>
+        </nav>
+
+        <button class="back-to-top" id="backToTop" title="Наверх">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="script.js"></script>
+        <script src="particles.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                new ParticleBackground('heroCanvas');
+
+                let allBooks = [];
+
+                // 1. Загрузка книг
+                async function fetchBooks() {
+                    try {
+                        const response = await fetch('/api/books');
+                        allBooks = await response.json();
+                        renderBooks(allBooks);
+                    } catch (err) {
+                        console.error('Ошибка загрузки книг:', err);
+                        document.getElementById('bookGrid').innerHTML = '<p style="color: red;">Ошибка связи с сервером.</p>';
+                    }
+                }
+
+                // 2. Отрисовка карточек
+                function renderBooks(books) {
+                    const grid = document.getElementById('bookGrid');
+                    const countDisplay = document.getElementById('resultsCount');
+                    grid.innerHTML = '';
+                    countDisplay.textContent = `Найдено ${books.length} изданий`;
+
+                    if (books.length === 0) {
+                        grid.innerHTML = `
+                            <div style="grid-column: 1/-1; text-align: center; padding: 100px 0; opacity: 0.5;">
+                                <i class="fas fa-book-open" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                                <h3>Архив пуст</h3>
+                                <p>Добавьте первую книгу через панель выше.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    books.forEach(book => {
+                        const card = document.createElement('div');
+                        card.className = 'book-card-minimal reveal active';
+                        card.innerHTML = `
+                            <div class="card-img" style="aspect-ratio: 2/3; position: relative; overflow: hidden; border-radius: 8px;">
+                                <img src="${book.imageUrl || 'https://via.placeholder.com/400x600?text=No+Cover'}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="margin-top: 15px; margin-bottom: 5px;">${book.title}</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">${book.author}</p>
+                            <div style="margin-top: 10px; font-size: 0.75rem; color: var(--accent); font-weight: 700;">$${book.price}</div>
+                            <a href="reader.html?id=${book._id}" class="btn btn-outline" style="width: 100%; margin-top: 20px; font-size: 0.85rem;">Читать</a>
+                        `;
+                        grid.appendChild(card);
+                    });
+                }
+
+                // 3. Поиск (фильтрация на лету)
+                document.getElementById('catalogSearch').addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase();
+                    const filtered = allBooks.filter(b =>
+                        b.title.toLowerCase().includes(term) ||
+                        b.author.toLowerCase().includes(term)
+                    );
+                    renderBooks(filtered);
+                });
+
+                // 4. Добавление новой книги (POST)
+                document.getElementById('addBookForm').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const bookData = {
+                        title: document.getElementById('addTitle').value,
+                        author: document.getElementById('addAuthor').value,
+                        price: Number(document.getElementById('addPrice').value),
+                        imageUrl: document.getElementById('addImage').value
+                    };
+
+                    try {
+                        const res = await fetch('/api/books', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(bookData)
+                        });
+
+                        if (res.ok) {
+                            e.target.reset();
+                            fetchBooks(); // Обновляем список
+                        } else {
+                            alert('Ошибка при сохранении книги');
+                        }
+                    } catch (err) {
+                        console.error('Ошибка отправки:', err);
+                    }
+                });
+
+                // Инициализация
+                fetchBooks();
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О Нас | NX-LIB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">NX-LIB</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link">Каталог</a>
+                <a href="membership.html" class="nav-link">Подписка</a>
+                <a href="about.html" class="nav-link active">О Нас</a>
+                <button class="btn-login" id="openLogin">Войти</button>
+            </div>
+            <!-- Mobile Toggle icon -->
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="membership.html" class="nav-link">Подписка</a>
+        <a href="about.html" class="nav-link active">О Нас</a>
+        <button class="btn-login" id="openLoginMobile">Войти</button>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+    <!-- Mission -->
+    <header class="hero section">
+        <canvas id="heroCanvas"></canvas>
+        <div class="container">
+            <div class="grid-2" style="gap: 60px; align-items: center;">
+                <div class="mission-content reveal">
+                    <h1 style="font-size: 3rem;">Хранители цифрового наследия.</h1>
+                    <p class="hero-subtitle" style="margin-top: 2rem; font-size: 1.2rem;">Мы превращаем хаос информации
+                        в структурированную библиотеку знаний, доступную каждому жителю Земли.</p>
+                    <div
+                        style="margin-top: 40px; padding: 40px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary);">
+                        <h3 style="margin-bottom: 1.5rem;">Наше видение</h3>
+                        <p style="margin-bottom: 1.5rem;">NX-LIB (ранее NEXUS) была основана группой ученых и инженеров,
+                            осознавших хрупкость цифровой информации. В мире, где данные могут быть стерты или искажены
+                            в считанные секунды, мы создали надежную архитектуру сохранения.</p>
+                        <p>Мы используем децентрализованные методы хранения и строгую кураторскую политику, чтобы
+                            гарантировать: качественная литература и научные труды будут доступны будущим поколениям без
+                            цензуры и ограничений.</p>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=600"
+                        alt="Digital Archive"
+                        style="width: 100%; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- History Timeline -->
+    <section class="section"
+        style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 class="reveal" style="text-align: center; margin-bottom: 60px;">История становления</h2>
+
+                <div class="timeline">
+                    <!-- 2020 -->
+                    <div class="timeline-item reveal"
+                        style="display: flex; gap: 40px; margin-bottom: 60px; position: relative;">
+                        <div style="flex: 0 0 100px; font-weight: 800; font-size: 1.5rem; color: var(--accent);">2020
+                        </div>
+                        <div style="padding-left: 30px; border-left: 2px solid var(--accent);">
+                            <h4 style="margin-bottom: 10px;">Прототип NEXUS</h4>
+                            <p>Запуск первой версии децентрализованной системы хранения данных. Группа энтузиастов из
+                                МФТИ и MIT объединяет усилия для защиты научных архивов от потенциальных киберугроз.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2045 -->
+                    <div class="timeline-item reveal"
+                        style="display: flex; gap: 40px; margin-bottom: 60px; position: relative;">
+                        <div style="flex: 0 0 100px; font-weight: 800; font-size: 1.5rem; color: var(--accent);">2045
+                        </div>
+                        <div style="padding-left: 30px; border-left: 2px solid var(--border-color);">
+                            <h4 style="margin-bottom: 10px;">Интеграция ИИ-Кураторов</h4>
+                            <p>Внедрение первых нейронных сетей для классификации и проверки подлинности исторических
+                                документов. NEXUS становится стандартом для хранения университетских библиотек.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2110 -->
+                    <div class="timeline-item reveal"
+                        style="display: flex; gap: 40px; margin-bottom: 60px; position: relative;">
+                        <div style="flex: 0 0 100px; font-weight: 800; font-size: 1.5rem; color: var(--accent);">2110
+                        </div>
+                        <div style="padding-left: 30px; border-left: 2px solid var(--border-color);">
+                            <h4 style="margin-bottom: 10px;">Квантовый скачок</h4>
+                            <p>Переход на квантовое шифрование и хранение. Объем накопленных знаний превышает 1 петабайт
+                                уникальных культурных ценностей. Ребрендинг в NX-LIB.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2250 -->
+                    <div class="timeline-item reveal"
+                        style="display: flex; gap: 40px; margin-bottom: 60px; position: relative;">
+                        <div style="flex: 0 0 100px; font-weight: 800; font-size: 1.5rem; color: var(--accent);">2250
+                        </div>
+                        <div style="padding-left: 30px; border-left: 2px solid var(--border-color);">
+                            <h4 style="margin-bottom: 10px;">Статус Всемирного Достояния</h4>
+                            <p>ООН признает архивы NX-LIB критически важной инфраструктурой планеты. Создание
+                                орбитальных узлов хранения для обеспечения максимальной отказоустойчивости.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2420 -->
+                    <div class="timeline-item reveal" style="display: flex; gap: 40px; position: relative;">
+                        <div style="flex: 0 0 100px; font-weight: 800; font-size: 1.5rem; color: var(--accent);">2420
+                        </div>
+                        <div style="padding-left: 30px; border-left: 2px solid var(--border-color);">
+                            <h4 style="margin-bottom: 10px;">Сегодня: Эпоха Свободных Знаний</h4>
+                            <p>NX-LIB объединяет более 2 миллиардов пользователей. Мы продолжаем миссию по оцифровке
+                                последних рукописных памятников доцифровой эпохи.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Values -->
+    <section class="section">
+        <div class="container">
+            <h2 class="reveal" style="text-align: center; margin-bottom: 80px;">Философия и ценности</h2>
+
+            <div class="grid-2" style="grid-template-columns: repeat(3, 1fr); gap: 40px;">
+                <div class="reveal"
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; transition: all 0.3s ease;">
+                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 25px;"><i
+                            class="fas fa-lock-open"></i></div>
+                    <h4 style="margin-bottom: 15px;">Радикальная открытость</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.7; opacity: 0.8;">Мы верим, что доступ к информации
+                        —
+                        это базовое право человека. Никакие политические или экономические границы не должны
+                        препятствовать поиску знаний.</p>
+                </div>
+
+                <div class="reveal"
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; transition: all 0.3s ease;">
+                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 25px;"><i
+                            class="fas fa-shield-alt"></i></div>
+                    <h4 style="margin-bottom: 15px;">Абсолютный иммунитет</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.7; opacity: 0.8;">Наши системы спроектированы так,
+                        чтобы выдержать любые попытки цензуры или уничтожения данных. Знания сохраняются в вечности.
+                    </p>
+                </div>
+
+                <div class="reveal"
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; transition: all 0.3s ease;">
+                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 25px;"><i
+                            class="fas fa-microchip"></i></div>
+                    <h4 style="margin-bottom: 15px;">Технологическая этика</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.7; opacity: 0.8;">Мы используем технологии не для
+                        слежки, а для служения. NX-LIB не собирает личные данные и не продает внимание пользователей
+                        рекламодателям.</p>
+                </div>
+
+                <div class="reveal"
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; transition: all 0.3s ease;">
+                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 25px;"><i
+                            class="fas fa-users"></i></div>
+                    <h4 style="margin-bottom: 15px;">Сила сообщества</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.7; opacity: 0.8;">Кураторы по всему миру
+                        добровольно
+                        пополняют наш архив, гарантируя разнообразие взглядов и полноту представленных материалов.
+                    </p>
+                </div>
+
+                <div class="reveal"
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; transition: all 0.3s ease;">
+                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 25px;"><i
+                            class="fas fa-infinity"></i></div>
+                    <h4 style="margin-bottom: 15px;">Устойчивость веков</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.7; opacity: 0.8;">Мы планируем не на годы, а на
+                        столетия. Архитектура NX-LIB рассчитана на миграцию через любые форматы и смены
+                        технологических
+                        укладов.</p>
+                </div>
+
+                <div class="reveal"
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; transition: all 0.3s ease;">
+                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 25px;"><i
+                            class="fas fa-leaf"></i></div>
+                    <h4 style="margin-bottom: 15px;">Экология данных</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.7; opacity: 0.8;">Оптимизация алгоритмов хранения
+                        позволяет нам использовать минимум энергии, делая оцифровку знаний углеродно-нейтральной.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technological Infrastructure -->
+    <section class="section section-dark-contrast">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <h2 style="margin-bottom: 30px;">Технологическое превосходство</h2>
+                    <p style="opacity: 0.8; margin-bottom: 32px; font-size: 1.1rem; color: inherit;">Мы не просто
+                        библиотека, мы —
+                        архитектурный шедевр цифровой эпохи. Наша инфраструктура построена на принципах абсолютной
+                        избыточности и вечного хранения.</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 30px;">
+                        <div style="padding: 30px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: var(--accent); margin-bottom: 12px;">Квантовое хранилище (Q-Storage)
+                            </h4>
+                            <p style="font-size: 0.9rem; opacity: 0.7; color: inherit;">Используя запутанные состояния
+                                атомов, мы
+                                достигли плотности записи в 10^18 терабайт на кубический сантиметр. Ваши данные
+                                буквально записаны в структуре материи.</p>
+                        </div>
+                        <div style="padding: 30px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: var(--accent); margin-bottom: 12px;">Протокол "Нервная сеть"</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.7; color: inherit;">Децентрализованный протокол
+                                распределяет
+                                фрагменты данных по миллионам узлов. Даже при уничтожении 90% сети, данные могут
+                                быть
+                                восстановлены мгновенно.</p>
+                        </div>
+                        <div style="padding: 30px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h4 style="color: var(--accent); margin-bottom: 12px;">Темпоральная синхронизация</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.7; color: inherit;">Система автоматически создает
+                                резервные
+                                копии в
+                                разных временных метках, защищая историю от любых попыток ревизионизма или цифрового
+                                стирания.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal" style="position: relative;">
+                    <div
+                        style="width: 100%; height: 500px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);">
+                        <div style="text-align: center;">
+                            <i class="fas fa-brain"
+                                style="font-size: 5rem; color: var(--accent); margin-bottom: 20px; filter: drop-shadow(0 0 20px var(--accent));"></i>
+                            <h3 style="color: var(--text-primary);">NX-CORE v5.0</h3>
+                            <p style="opacity: 0.5; font-size: 0.8rem; color: var(--text-secondary);">Активно:
+                                Орбитальный узел 01-ALPHA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            <h2 class="reveal" style="text-align: center; margin-bottom: 20px;">Совет Кураторов</h2>
+            <p class="reveal"
+                style="text-align: center; color: var(--text-secondary); margin-bottom: 80px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Лучшие умы современности, посвятившие себя защите человеческого наследия.</p>
+
+            <div class="grid-2 reveal" style="grid-template-columns: repeat(3, 1fr); gap: 40px;">
+                <!-- Member 1 -->
+                <div class="price-card reveal"
+                    style="border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); padding: 50px 30px;">
+                    <div style="position: relative; width: 120px; height: 120px; margin: 0 auto 30px;">
+                        <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Founder"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 5px;">
+                    </div>
+                    <h4 style="margin-bottom: 5px; font-size: 1.25rem;">Алексей Морозов</h4>
+                    <p
+                        style="font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                        Основатель и Визионер</p>
+                    <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.8;">Доктор квантовой информатики с
+                        20-летним стажем. Автор манифеста "Вечное Знание" и главный архитектор NX-CORE.</p>
+                    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-secondary);"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--text-secondary);"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="price-card reveal"
+                    style="border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); padding: 50px 30px;">
+                    <div style="position: relative; width: 120px; height: 120px; margin: 0 auto 30px;">
+                        <img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Designer"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 5px;">
+                    </div>
+                    <h4 style="margin-bottom: 5px; font-size: 1.25rem;">Елена Рихтер</h4>
+                    <p
+                        style="font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                        Директор по эстетике</p>
+                    <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.8;">Создатель "Швейцарского
+                        минимализма
+                        v3". Считает, что простота интерфейса — ключ к чистоте восприятия информации.</p>
+                    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-secondary);"><i class="fab fa-behance"></i></a>
+                        <a href="#" style="color: var(--text-secondary);"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="price-card reveal"
+                    style="border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); padding: 50px 30px;">
+                    <div style="position: relative; width: 120px; height: 120px; margin: 0 auto 30px;">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Developer"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 5px;">
+                    </div>
+                    <h4 style="margin-bottom: 5px; font-size: 1.25rem;">Дмитрий Соколов</h4>
+                    <p
+                        style="font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                        Технический директор</p>
+                    <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.8;">Эксперт в области распределенных
+                        вычислений. Руководит разработкой децентрализованного протокола "Нервная сеть".</p>
+                    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-secondary);"><i class="fab fa-github"></i></a>
+                        <a href="#" style="color: var(--text-secondary);"><i class="fas fa-terminal"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="price-card reveal"
+                    style="border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); padding: 50px 30px;">
+                    <div style="position: relative; width: 120px; height: 120px; margin: 0 auto 30px;">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Data Scientist"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 5px;">
+                    </div>
+                    <h4 style="margin-bottom: 5px; font-size: 1.25rem;">Анна Петрова</h4>
+                    <p
+                        style="font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                        Главный аналитик</p>
+                    <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.8;">Разрабатывает алгоритмы
+                        ИИ-кураторства и системы предотвращения информационного шума в библиотечных фондах.</p>
+                    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-secondary);"><i class="fas fa-microchip"></i></a>
+                        <a href="#" style="color: var(--text-secondary);"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="price-card reveal"
+                    style="border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); padding: 50px 30px;">
+                    <div style="position: relative; width: 120px; height: 120px; margin: 0 auto 30px;">
+                        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="DevOps"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 5px;">
+                    </div>
+                    <h4 style="margin-bottom: 5px; font-size: 1.25rem;">Игорь Волков</h4>
+                    <p
+                        style="font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                        Глава инфраструктуры</p>
+                    <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.8;">Обеспечивает связь с орбитальными
+                        узлами и бесперебойную работу глобальной сети хранения NX-LIB.</p>
+                    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-secondary);"><i class="fas fa-server"></i></a>
+                        <a href="#" style="color: var(--text-secondary);"><i class="fab fa-aws"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="price-card reveal"
+                    style="border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); padding: 50px 30px;">
+                    <div style="position: relative; width: 120px; height: 120px; margin: 0 auto 30px;">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Content Manager"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 5px;">
+                    </div>
+                    <h4 style="margin-bottom: 5px; font-size: 1.25rem;">Мария Иванова</h4>
+                    <p
+                        style="font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                        Главный куратор</p>
+                    <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.8;">Курирует процесс оцифровки
+                        физических
+                        носителей и проверяет историческую достоверность редких изданий.</p>
+                    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-secondary);"><i class="fas fa-book"></i></a>
+                        <a href="#" style="color: var(--text-secondary);"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Impact -->
+    <section class="section" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <h2 class="reveal">Глобальное влияние</h2>
+                <p class="reveal" style="color: var(--text-secondary); margin-top: 20px;">Цифры, которые говорят о
+                    нашей
+                    ответственности перед будущим.</p>
+            </div>
+
+            <div class="grid-2" style="grid-template-columns: repeat(4, 1fr); gap: 30px;">
+                <div class="stat-card reveal"
+                    style="text-align: center; padding: 40px; background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 10px;">
+                        2.4B
+                    </div>
+                    <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;">
+                        Активных
+                        читателей</p>
+                </div>
+                <div class="stat-card reveal"
+                    style="text-align: center; padding: 40px; background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 10px;">185
+                    </div>
+                    <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;">
+                        Стран
+                        присутствия</p>
+                </div>
+                <div class="stat-card reveal"
+                    style="text-align: center; padding: 40px; background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 10px;">
+                        100%
+                    </div>
+                    <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;">
+                        Сохранность данных</p>
+                </div>
+                <div class="stat-card reveal"
+                    style="text-align: center; padding: 40px; background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 10px;">0
+                    </div>
+                    <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;">
+                        Случаев
+                        цензуры</p>
+                </div>
+            </div>
+
+            <div class="reveal section-dark-contrast"
+                style="margin-top: 60px; padding: 60px; border-radius: 16px; display: flex; align-items: center; gap: 60px;">
+                <div style="flex: 1;">
+                    <h3 style="margin-bottom: 20px;">Экологическая миссия</h3>
+                    <p style="opacity: 0.7; line-height: 1.8; color: inherit;">Наши дата-центры работают исключительно
+                        на
+                        возобновляемой
+                        энергии. Мы разработали протоколы холодного хранения, которые позволяют содержать эксабайты
+                        данных при потреблении энергии, сравнимом с обычной домашней лампочкой.</p>
+                </div>
+                <div style="flex: 0 0 200px; text-align: center;">
+                    <i class="fas fa-leaf" style="font-size: 4rem; color: #10b981;"></i>
+                    <p style="margin-top: 15px; font-weight: 700; color: #10b981;">CO2 NEUTRAL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-2" style="gap: 80px;">
+                <div class="reveal">
+                    <h2 style="margin-bottom: 30px;">Работа в NX-LIB</h2>
+                    <p style="margin-bottom: 40px; font-size: 1.1rem; line-height: 1.8;">Мы постоянно ищем тех, кто
+                        готов посвятить свою жизнь защите истины. В NX-LIB вы не просто сотрудник, вы — страж
+                        человечности.</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <a href="#" class="btn btn-outline"
+                            style="justify-content: space-between; padding: 25px; display: flex; align-items: center; border-radius: 8px;">
+                            <span>Архитектор квантовых сетей</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline"
+                            style="justify-content: space-between; padding: 25px; display: flex; align-items: center; border-radius: 8px;">
+                            <span>Куратор исторического сектора</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline"
+                            style="justify-content: space-between; padding: 25px; display: flex; align-items: center; border-radius: 8px;">
+                            <span>Специалист по лингвистической сохранности</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="reveal"
+                    style="padding: 50px; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 25px;">Почему выбирают нас?</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px;">
+                        <li style="display: flex; gap: 15px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent); margin-top: 5px;"></i>
+                            <div>
+                                <strong>Удаленная работа из любой точки мира</strong>
+                                <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Развитая система
+                                    VR-команд
+                                    позволяет работать эффективно, не покидая дома.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 15px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent); margin-top: 5px;"></i>
+                            <div>
+                                <strong>Безлимитный доступ к знаниям</strong>
+                                <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Каждый сотрудник
+                                    получает
+                                    VIP-доступ ко всем архивам, включая закрытые секции.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 15px;">
+                            <i class="fas fa-check-circle" style="color: var(--accent); margin-top: 5px;"></i>
+                            <div>
+                                <strong>Инвестиции в ваше развитие</strong>
+                                <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">Мы оплачиваем любое
+                                    обучение, если оно помогает вам лучше сохранять данные.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="reveal" style="text-align: center; margin-bottom: 60px;">Вопросы и ответы</h2>
+            <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+                <div class="faq-card reveal"
+                    style="background: var(--bg-primary); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 10px;">Как ваша система защищена от хакерских атак?</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.7;">Мы используем постквантовые алгоритмы шифрования и
+                        физическую изоляцию критических узлов. Даже государственные структуры не имеют ключей
+                        доступа к
+                        нашим архивам.</p>
+                </div>
+                <div class="faq-card reveal"
+                    style="background: var(--bg-primary); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 10px;">Какой контент вы считаете приоритетным?</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.7;">Научные труды, классическая литература,
+                        исторические
+                        документы и культурные артефакты, которые рискуют быть утраченными в ходе конфликтов или
+                        технологических сбоев.</p>
+                </div>
+                <div class="faq-card reveal"
+                    style="background: var(--bg-primary); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 10px;">Бесплатна ли регистрация для архивистов?</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.7;">Статус архивиста — это привилегия и
+                        ответственность.
+                        Регистрация бесплатна, но требует подтверждения квалификации или вклада в развитие
+                        библиотеки.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align: center; padding: 150px 0;">
+        <div class="container reveal">
+            <h2 style="font-size: 4rem; margin-bottom: 30px; letter-spacing: -3px;">Знание — это власть.</h2>
+            <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 50px;">
+                Используйте его мудро. Сохраняйте его вечно.</p>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <a href="register.html" class="btn btn-primary" style="padding: 20px 50px; font-weight: 700;">Стать
+                    хранителем</a>
+                <a href="catalog.html" class="btn btn-outline" style="padding: 20px 50px;">Исследовать архив</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid" style="grid-template-columns: repeat(4, 1fr); gap: 60px;">
+            <div class="footer-info">
+                <div class="logo">NX-LIB</div>
+                <p style="margin-top: 20px; line-height: 1.6; opacity: 0.6;">Глобальная децентрализованная
+                    библиотека,
+                    посвященная сохранению человеческого наследия в цифровую эпоху и далее. Основана в 2020 году.
+                </p>
+                <div style="margin-top: 30px; display: flex; gap: 20px; font-size: 1.2rem;">
+                    <a href="#" style="color: var(--text-secondary);"><i class="fab fa-github"></i></a>
+                    <a href="#" style="color: var(--text-secondary);"><i class="fab fa-discord"></i></a>
+                    <a href="#" style="color: var(--text-secondary);"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 style="margin-bottom: 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">
+                    Навигация</h4>
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Архив книг</a>
+                <a href="membership.html">VIP Статус</a>
+                <a href="about.html" class="active">О платформе</a>
+            </div>
+            <div class="footer-links">
+                <h4 style="margin-bottom: 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">
+                    Сообщество</h4>
+                <a href="#">Форум архивистов</a>
+                <a href="#">База знаний</a>
+                <a href="#">Документация API</a>
+                <a href="#">Для разработчиков</a>
+            </div>
+            <div class="footer-links">
+                <h4 style="margin-bottom: 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">
+                    Правовая инфо</h4>
+                <a href="#">Условия использования</a>
+                <a href="#">Политика данных</a>
+                <a href="#">Протоколы безопасности</a>
+                <a href="#">Конфиденциальность</a>
+            </div>
+        </div>
+        <div class="container"
+            style="margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); color: #999; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>&copy; 2020 — 2025 NX-LIB Core System. Built for eternity.</div>
+            <div style="display: flex; gap: 30px;">
+                <span>Статус сети: <span style="color: #10b981;">Online</span></span>
+                <span>Защита: <span style="color: var(--accent);">Quantum Encrypted</span></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeLogin">&times;</button>
+            <h3 style="margin-bottom: 2rem; text-align: center;">Вход в системный архив</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="user@nexus.system" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Ключ доступа</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; margin-top: 1.5rem;">Авторизация</button>
+            </form>
+            <p style="text-align: center; margin-top: 25px; font-size: 0.85rem; color: var(--text-secondary);">
+                Впервые здесь? <a href="register.html"
+                    style="color: var(--accent); font-weight: 600; text-decoration: none;">Регистрация архивиста</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollBar"></div>
+    </div>
+
+    <!-- Mobile Action Dock -->
+    <nav class="mobile-dock">
+        <a href="index.html" class="dock-item">
+            <i class="fas fa-home"></i>
+            <span>Главная</span>
+        </a>
+        <a href="catalog.html" class="dock-item">
+            <i class="fas fa-search"></i>
+            <span>Каталог</span>
+        </a>
+        <button class="dock-item" id="shareBtn" style="background: none; border: none; padding: 0;">
+            <i class="fas fa-share-alt"></i>
+            <span>Поделиться</span>
+        </button>
+        <a href="membership.html" class="dock-item">
+            <i class="fas fa-crown"></i>
+            <span>VIP</span>
+        </a>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle-btn" id="themeToggle" title="Переключить тему">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleBackground('heroCanvas');
+        });
+    </script>
+</body>
+
+</html>

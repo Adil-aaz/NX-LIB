@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | NEXUS</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <div class="loader-text glitch" data-text="SYNCING COMMUNITY...">SYNCING COMMUNITY...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-cube scanner-effect"></i> NEXUS
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                <li><a href="membership.html" class="nav-link">Доступ</a></li>
+                <li><a href="community.html" class="nav-link active">Сообщество</a></li>
+                <li><a href="app.html" class="nav-link">Приложение</a></li>
+                <li><a href="about.html" class="nav-link">О Нас</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="section"
+        style="padding-top: 150px; background: radial-gradient(circle at top, var(--neon-purple-dim), transparent);">
+        <div class="container">
+            <h1 class="section-title scroll-anim" data-anim="slide-right">Хаб Сообщества <span
+                    class="accent-dot">.</span></h1>
+            <div class="search-bar" style="max-width: 600px; position: relative; margin-top: 30px;">
+                <input type="text" placeholder="Поиск по форуму..."
+                    style="width: 100%; padding: 15px 50px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 30px; color: white;">
+                <i class="fas fa-search"
+                    style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--neon-purple);"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Content -->
+    <section class="section alt-bg">
+        <div class="container community-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 50px;">
+            <!-- main feed -->
+            <div class="community-feed">
+                <h3 style="margin-bottom: 30px;">Свежие Обсуждения</h3>
+
+                <!-- Post 1 -->
+                <div class="community-card glass scroll-anim" data-anim="slide-up"
+                    style="margin-bottom: 30px; width: 100%;">
+                    <div class="post-header"
+                        style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="user-avatar"
+                            style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--neon-blue);">
+                        <div>
+                            <h5 style="margin: 0; color: white;">CyberReader_99</h5>
+                            <span class="post-date" style="font-size: 0.8rem; color: var(--text-muted);">2 часа назад в
+                                #Cyberpunk</span>
+                        </div>
+                    </div>
+                    <p class="post-text">Кто уже читал "Код Бессмертия"? Концовка просто взорвала мне мозг! Не ожидал
+                        такого поворота с главным героем. Как вы думаете, будет ли продолжение?</p>
+                    <div class="post-actions"
+                        style="display: flex; gap: 20px; border-top: 1px solid var(--glass-border); padding-top: 15px; margin-top: 15px;">
+                        <span><i class="fas fa-heart neon-text"></i> 245 Лайков</span>
+                        <span><i class="fas fa-comment neon-text-purple"></i> 42 Ответа</span>
+                        <span><i class="fas fa-share"></i> Поделиться</span>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="community-card glass scroll-anim" data-anim="slide-up"
+                    style="margin-bottom: 30px; width: 100%; transition-delay: 0.1s;">
+                    <div class="post-header"
+                        style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="user-avatar"
+                            style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--neon-purple);">
+                        <div>
+                            <h5 style="margin: 0; color: white;">NeonAlice</h5>
+                            <span class="post-date" style="font-size: 0.8rem; color: var(--text-muted);">5 часов назад в
+                                #Requests</span>
+                        </div>
+                    </div>
+                    <p class="post-text">Ищу рекомендации по антиутопиям в стиле раннего Дика. Что посоветуете? Хочется
+                        чего-то мрачного и философского.</p>
+                    <div class="post-actions"
+                        style="display: flex; gap: 20px; border-top: 1px solid var(--glass-border); padding-top: 15px; margin-top: 15px;">
+                        <span><i class="fas fa-heart neon-text"></i> 112 Лайков</span>
+                        <span><i class="fas fa-comment neon-text-purple"></i> 89 Ответов</span>
+                        <span><i class="fas fa-share"></i> Поделиться</span>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="community-card glass scroll-anim" data-anim="slide-up"
+                    style="margin-bottom: 30px; width: 100%; transition-delay: 0.2s;">
+                    <div class="post-header"
+                        style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User" class="user-avatar"
+                            style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--neon-green);">
+                        <div>
+                            <h5 style="margin: 0; color: white;">TechnoMancer</h5>
+                            <span class="post-date" style="font-size: 0.8rem; color: var(--text-muted);">Вчера в
+                                #News</span>
+                        </div>
+                    </div>
+                    <p class="post-text">Обновление NEXUS v.7.0.2 уже в сети! Исправлены баги AR-рендеринга и добавлена
+                        поддержка новых форматов. Обязательно обновите приложение!</p>
+                    <div class="post-actions"
+                        style="display: flex; gap: 20px; border-top: 1px solid var(--glass-border); padding-top: 15px; margin-top: 15px;">
+                        <span><i class="fas fa-heart neon-text"></i> 567 Лайков</span>
+                        <span><i class="fas fa-comment neon-text-purple"></i> 12 Ответов</span>
+                        <span><i class="fas fa-share"></i> Поделиться</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- sidebar -->
+            <div class="community-sidebar">
+                <!-- Trending Topics -->
+                <div class="glass scroll-anim" data-anim="slide-right"
+                    style="padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+                    <h4 style="margin-bottom: 20px;">Популярные Темы</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 15px;">
+                        <li><a href="#" class="nav-link" style="font-size: 0.9rem;">#CyberSamurai (1.2k)</a></li>
+                        <li><a href="#" class="nav-link" style="font-size: 0.9rem;">#AILogic (856)</a></li>
+                        <li><a href="#" class="nav-link" style="font-size: 0.9rem;">#MarsMigration (642)</a></li>
+                        <li><a href="#" class="nav-link" style="font-size: 0.9rem;">#NeuralLinks (431)</a></li>
+                        <li><a href="#" class="nav-link" style="font-size: 0.9rem;">#QuantumCrypto (322)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Active Users -->
+                <div class="glass scroll-anim" data-anim="slide-right"
+                    style="padding: 25px; border-radius: 20px; transition-delay: 0.1s;">
+                    <h4 style="margin-bottom: 20px;">В Сети</h4>
+                    <div class="users-list" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                        <img src="https://randomuser.me/api/portraits/thumb/men/1.jpg" alt="User"
+                            style="width: 100%; border-radius: 10px;">
+                        <img src="https://randomuser.me/api/portraits/thumb/women/1.jpg" alt="User"
+                            style="width: 100%; border-radius: 10px;">
+                        <img src="https://randomuser.me/api/portraits/thumb/men/2.jpg" alt="User"
+                            style="width: 100%; border-radius: 10px;">
+                        <img src="https://randomuser.me/api/portraits/thumb/women/2.jpg" alt="User"
+                            style="width: 100%; border-radius: 10px;">
+                        <img src="https://randomuser.me/api/portraits/thumb/men/3.jpg" alt="User"
+                            style="width: 100%; border-radius: 10px;">
+                        <img src="https://randomuser.me/api/portraits/thumb/women/3.jpg" alt="User"
+                            style="width: 100%; border-radius: 10px;">
+                        <div
+                            style="background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 0.7rem;">
+                            +452</div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="glass scroll-anim" data-anim="slide-right"
+                    style="padding: 25px; border-radius: 20px; margin-top: 30px; transition-delay: 0.2s;">
+                    <h4 style="margin-bottom: 20px;">События</h4>
+                    <div class="event-item"
+                        style="margin-bottom: 15px; border-left: 3px solid var(--neon-blue); padding-left: 10px;">
+                        <p style="margin: 0; font-weight: bold; font-size: 0.9rem;">Стрим с Акирой Ямаока</p>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">Завтра в 20:00 (МСК)</span>
+                    </div>
+                    <div class="event-item" style="border-left: 3px solid var(--neon-purple); padding-left: 10px;">
+                        <p style="margin: 0; font-weight: bold; font-size: 0.9rem;">Конкурс Кибер-Рассказов</p>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">Прием работ до 30.12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">NEXUS</div>
+                <p>Будущее чтения уже здесь. Присоединяйтесь к революции свободного обмена знаниями.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="membership.html">Тарифы</a>
+                <a href="community.html">Сообщество</a>
+                <a href="app.html">Приложение</a>
+                <a href="about.html">О Нас</a>
+            </div>
+            <div class="footer-col newsletter">
+                <h4>Подписка</h4>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Email...">
+                    <button type="button"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2077 NEXUS Library. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

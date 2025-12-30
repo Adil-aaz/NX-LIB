@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--
+    ========================================================================
+    NX-LIB | MEMBERSHIP & PRICING
+    
+    This page details all subscription tiers, features comparison,
+    and benefits of joining the NX-LIB digital archive community.
+    
+    Built with minimalist Swiss design principles.
+    ========================================================================
+-->
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подписка | NX-LIB</title>
+
+    <!-- Meta Tags -->
+    <meta name="description"
+        content="Выберите тарифный план NX-LIB для доступа к крупнейшему цифровому архиву знаний. Тарифы для частных лиц, профессионалов и организаций.">
+    <meta name="keywords" content="subscription, membership, pricing, digital library, nx-lib">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">NX-LIB</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link">Каталог</a>
+                <a href="membership.html" class="nav-link active">Подписка</a>
+                <a href="about.html" class="nav-link">О Нас</a>
+                <button class="btn-login" id="openLogin">Войти</button>
+            </div>
+            <!-- Mobile Toggle icon -->
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="membership.html" class="nav-link active">Подписка</a>
+        <a href="about.html" class="nav-link">О Нас</a>
+        <button class="btn-login" id="openLoginMobile">Войти</button>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Hero Section -->
+    <header class="hero section">
+        <canvas id="heroCanvas"></canvas>
+        <div class="container">
+            <div class="hero-content reveal" style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <div class="line-decoration" style="margin: 0 auto 32px;"></div>
+                <h1>Инвестируйте в знания.</h1>
+                <p class="hero-subtitle" style="margin-top: 2rem;">
+                    Выберите тарифный план, который соответствует вашим потребностям. Все средства направляются на
+                    оцифровку новых фондов и поддержание инфраструктуры архива.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Pricing Cards -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="membership-grid reveal">
+                <!-- Free Tier -->
+                <div class="price-card">
+                    <div
+                        style="text-align: center; padding: 20px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px;">
+                        <div
+                            style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-secondary); margin-bottom: 12px;">
+                            Свободный доступ
+                        </div>
+                        <h3 style="margin: 0;">Базовый</h3>
+                    </div>
+                    <div class="price-header">
+                        <div class="price-value" style="text-align: center;">0.00<span style="font-size: 1.2rem;">
+                                ₽</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Доступ к 100,000+ классических
+                            произведений</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Чтение в веб-интерфейсе</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Базовая система поиска</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Реклама полностью отсутствует
+                        </li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> До 5 закладок</li>
+                        <li style="color: #CCC;"><i class="fas fa-times" style="color: #CCC;"></i> Офлайн загрузка</li>
+                        <li style="color: #CCC;"><i class="fas fa-times" style="color: #CCC;"></i> Премиум коллекции
+                        </li>
+                        <li style="color: #CCC;"><i class="fas fa-times" style="color: #CCC;"></i> Приоритетная
+                            поддержка</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%; margin-top: auto;">Начать чтение</button>
+                </div>
+
+                <!-- Professional Tier -->
+                <div class="price-card featured"
+                    style="border: 2px solid var(--accent); background: var(--bg-secondary);">
+                    <div
+                        style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 6px 20px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;">
+                        ПОПУЛЯРНЫЙ
+                    </div>
+                    <div
+                        style="text-align: center; padding: 20px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; margin-top: 12px;">
+                        <div
+                            style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 12px;">
+                            Для профессионалов
+                        </div>
+                        <h3 style="margin: 0;">Профессионал</h3>
+                    </div>
+                    <div class="price-header">
+                        <div class="price-value" style="text-align: center;">990<span style="font-size: 1.2rem;"> /
+                                мес</span></div>
+                        <p
+                            style="text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">
+                            или 9,900 / год (экономия 20%)
+                        </p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Весь контент уровня "Базовый"
+                        </li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> <strong>1.8M+ книг</strong>
+                            полный доступ</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Офлайн загрузка в EPUB/PDF/MOBI
+                        </li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Расширенная типографика и темы
+                        </li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Синхронизация между устройствами
+                        </li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Неограниченные закладки и заметки
+                        </li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Ранний доступ к новинкам</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Поддержка 24/7 через e-mail</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: auto;">Выбрать Pro</button>
+                </div>
+
+                <!-- Institutional Tier -->
+                <div class="price-card">
+                    <div
+                        style="text-align: center; padding: 20px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px;">
+                        <div
+                            style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-secondary); margin-bottom: 12px;">
+                            Для организаций
+                        </div>
+                        <h3 style="margin: 0;">Институт</h3>
+                    </div>
+                    <div class="price-header">
+                        <div class="price-value" style="text-align: center;">4,900<span style="font-size: 1.2rem;"> ₽ /
+                                мес</span></div>
+                        <p
+                            style="text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">
+                            за 10 пользователей
+                        </p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Все функции уровня "Профессионал"
+                        </li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> До 50 активных пользователей</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Централизованное управление</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Доступ к API библиотеки</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Аналитика использования</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Групповые коллекции</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Инструменты цитирования</li>
+                        <li><i class="fas fa-check" style="color: var(--accent);"></i> Персональный менеджер</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%; margin-top: auto;">Связаться с нами</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison Table -->
+    <section class="section" style="background: var(--bg-tertiary);">
+        <div class="container">
+            <h2 class="reveal" style="text-align: center; margin-bottom: 60px;">Детальное сравнение возможностей</h2>
+            <div class="reveal" style="overflow-x: auto;">
+                <table
+                    style="width: 100%; border-collapse: collapse; background: var(--bg-primary); border-radius: 8px; overflow: hidden;">
+                    <thead>
+                        <tr style="background: var(--bg-secondary);">
+                            <th style="padding: 20px; text-align: left; font-weight: 700;">Возможность</th>
+                            <th style="padding: 20px; text-align: center; font-weight: 700;">Базовый</th>
+                            <th style="padding: 20px; text-align: center; font-weight: 700; color: var(--accent);">
+                                Профессионал</th>
+                            <th style="padding: 20px; text-align: center; font-weight: 700;">Институт</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 16px;">Количество книг</td>
+                            <td style="padding: 16px; text-align: center;">100,000+</td>
+                            <td style="padding: 16px; text-align: center; font-weight: 600;">1.8M+</td>
+                            <td style="padding: 16px; text-align: center; font-weight: 600;">1.8M+</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color); background: #FAFAFA;">
+                            <td style="padding: 16px;">Офлайн режим</td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-times"
+                                    style="color: #CCC;"></i></td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-check"
+                                    style="color: var(--accent);"></i></td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-check"
+                                    style="color: var(--accent);"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 16px;">Синхронизация устройств</td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-times"
+                                    style="color: #CCC;"></i></td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-check"
+                                    style="color: var(--accent);"></i></td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-check"
+                                    style="color: var(--accent);"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color); background: #FAFAFA;">
+                            <td style="padding: 16px;">Количество закладок</td>
+                            <td style="padding: 16px; text-align: center;">5</td>
+                            <td style="padding: 16px; text-align: center; font-weight: 600;">Безлимитно</td>
+                            <td style="padding: 16px; text-align: center; font-weight: 600;">Безлимитно</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 16px;">Экспорт заметок</td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-times"
+                                    style="color: #CCC;"></i></td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-check"
+                                    style="color: var(--accent);"></i></td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-check"
+                                    style="color: var(--accent);"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color); background: #FAFAFA;">
+                            <td style="padding: 16px;">Доступ к API</td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-times"
+                                    style="color: #CCC;"></i></td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-times"
+                                    style="color: #CCC;"></i></td>
+                            <td style="padding: 16px; text-align: center;"><i class="fas fa-check"
+                                    style="color: var(--accent);"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 16px;">Техническая поддержка</td>
+                            <td style="padding: 16px; text-align: center;">Справка</td>
+                            <td style="padding: 16px; text-align: center;">Email 24/7</td>
+                            <td style="padding: 16px; text-align: center; font-weight: 600;">Персональный менеджер</td>
+                        </tr>
+                        <tr style="background: #FAFAFA;">
+                            <td style="padding: 16px;">Количество пользователей</td>
+                            <td style="padding: 16px; text-align: center;">1</td>
+                            <td style="padding: 16px; text-align: center;">1</td>
+                            <td style="padding: 16px; text-align: center; font-weight: 600;">До 50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Subscribe Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-2" style="gap: 80px; align-items: center;">
+                <div class="reveal">
+                    <h2>Почему NX-LIB?</h2>
+                    <p style="margin-top: 24px; margin-bottom: 32px;">
+                        В отличие от корпоративных платформ, каждый рубль вашей подписки напрямую инвестируется в
+                        сохранение культурного наследия.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <div style="display: flex; gap: 20px;">
+                            <div
+                                style="flex-shrink: 0; width: 48px; height: 48px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-shield-alt" style="font-size: 1.2rem; color: var(--accent);"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 8px;">Конфиденциальность</h4>
+                                <p style="font-size: 0.95rem;">Мы не отслеживаем вашу активность и не продаем данные
+                                    третьим лицам.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 20px;">
+                            <div
+                                style="flex-shrink: 0; width: 48px; height: 48px; background: var(--bg-secondary); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-globe" style="font-size: 1.2rem; color: var(--accent);"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 8px;">Открытость</h4>
+                                <p style="font-size: 0.95rem;">Все наши алгоритмы и методы хранения открыты для проверки
+                                    сообществом.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 20px;">
+                            <div
+                                style="flex-shrink: 0; width: 48px; height: 48px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-heart" style="font-size: 1.2rem; color: var(--accent);"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 8px;">Миссия</h4>
+                                <p style="font-size: 0.95rem;">Мы некоммерческая организация, стремящаяся сделать знания
+                                    доступными навсегда.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal" style="text-align: center;">
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=600"
+                        alt="Library" style="width: 100%; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--bg-tertiary);">
+        <div class="container">
+            <h2 class="reveal" style="text-align: center; margin-bottom: 60px;">Частые вопросы о подписке</h2>
+            <div class="faq-container reveal" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item"
+                    style="border-bottom: 1px solid var(--border-color); padding-bottom: 24px; margin-bottom: 24px;">
+                    <div class="faq-question"
+                        style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h4 style="margin: 0;">Могу ли я отменить подписку в любой момент?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 20px;">
+                        <p>Да, вы можете отменить подписку в любое время через настройки аккаунта. Доступ сохранится до
+                            конца оплаченного периода.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item"
+                    style="border-bottom: 1px solid var(--border-color); padding-bottom: 24px; margin-bottom: 24px;">
+                    <div class="faq-question"
+                        style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h4 style="margin: 0;">Какие способы оплаты вы принимаете?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 20px;">
+                        <p>Мы принимаем банковские карты (Visa, MasterCard, Мир), электронные кошельки и криптовалюты
+                            (BTC, ETH).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item"
+                    style="border-bottom: 1px solid var(--border-color); padding-bottom: 24px; margin-bottom: 24px;">
+                    <div class="faq-question"
+                        style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h4 style="margin: 0;">Есть ли скидки для студентов?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 20px;">
+                        <p>Да, студенты получают 50% скидку на тариф "Профессионал". Требуется подтверждение статуса
+                            через студенческий билет.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="padding-bottom: 24px;">
+                    <div class="faq-question"
+                        style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        <h4 style="margin: 0;">Можно ли перейти с одного тарифа на другой?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" style="display: none; padding-top: 20px;">
+                        <p>Конечно! Вы можете повысить или понизить тариф в любое время. При повышении разница будет
+                            пересчитана пропорционально.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container">
+            <div class="reveal"
+                style="text-align: center; max-width: 600px; margin: 0 auto; padding: 80px 40px; border: 1px solid var(--border-color); border-radius: 8px;">
+                <h2 style="margin-bottom: 24px;">Готовы начать?</h2>
+                <p style="margin-bottom: 40px;">Присоединяйтесь к тысячам читателей, которые уже инвестируют в будущее
+                    свободных знаний.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" style="padding: 16px 40px;">Выбрать тариф</a>
+                    <a href="catalog.html" class="btn btn-outline" style="padding: 16px 40px;">Открыть каталог</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="logo">NX-LIB</div>
+                    <p style="margin-top: 1.5rem;">Ваша персональная цифровая библиотека.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 2rem;">Компания</h4>
+                    <a href="about.html">О нас</a>
+                    <a href="#">Контакты</a>
+                </div>
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 2rem;">Сообщество</h4>
+                    <a href="#">Блог</a>
+                    <a href="#">Discord</a>
+                </div>
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 2rem;">Юридическое</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+            <div style="margin-top: 60px; color: #999; font-size: 0.875rem; text-align: center;">
+                &copy; 2025 NX-LIB. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeLogin">&times;</button>
+            <h3 style="margin-bottom: 2rem; text-align: center;">Вход в системный архив</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="user@nexus.system" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Ключ доступа</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; margin-top: 1.5rem;">Авторизация</button>
+            </form>
+            <p style="text-align: center; margin-top: 25px; font-size: 0.85rem; color: var(--text-secondary);">
+                Впервые здесь? <a href="register.html"
+                    style="color: var(--accent); font-weight: 600; text-decoration: none;">Регистрация архивиста</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- UI Elements -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollBar"></div>
+    </div>
+
+    <button class="theme-toggle-btn" id="themeToggle" title="Переключить тему">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <nav class="mobile-dock">
+        <a href="index.html" class="dock-item">
+            <i class="fas fa-home"></i>
+            <span>Главная</span>
+        </a>
+        <a href="catalog.html" class="dock-item">
+            <i class="fas fa-search"></i>
+            <span>Каталог</span>
+        </a>
+        <button class="dock-item" id="shareBtn" style="background: none; border: none; padding: 0;">
+            <i class="fas fa-share-alt"></i>
+            <span>Поделиться</span>
+        </button>
+        <a href="membership.html" class="dock-item active">
+            <i class="fas fa-crown"></i>
+            <span>VIP</span>
+        </a>
+    </nav>
+
+    <button class="back-to-top" id="backToTop" title="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleBackground('heroCanvas');
+        });
+    </script>
+</body>
+
+</html>

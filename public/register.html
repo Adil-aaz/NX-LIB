@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация Архивиста | NX-LIB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .register-card {
+            max-width: 500px;
+            margin: 120px auto;
+            padding: 60px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-theme .register-card {
+            background: #1a1a1a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .register-footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .register-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class="pattern-bg">
+    <canvas id="heroCanvas"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <!-- Header -->
+    <header class="header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo">NX-LIB</a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link">Каталог</a>
+                <a href="membership.html" class="nav-link">VIP</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="register-card reveal">
+            <div class="form-header">
+                <h1>Регистрация архивиста</h1>
+                <p>Присоединяйтесь к сообществу хранителей знаний</p>
+            </div>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regName">Полное имя</label>
+                    <input type="text" id="regName" placeholder="Александр Невский" required
+                        style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary); color: var(--text-primary); outline: none;">
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">E-mail адрес</label>
+                    <input type="email" id="regEmail" placeholder="archivist@nexus.lib" required
+                        style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary); color: var(--text-primary); outline: none;">
+                </div>
+
+                <div class="form-group">
+                    <label for="regSpec">Специализация</label>
+                    <select id="regSpec" required
+                        style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary); color: var(--text-primary); outline: none;">
+                        <option value="">Выберите область...</option>
+                        <option value="history">Цифровая история</option>
+                        <option value="science">Квантовая физика</option>
+                        <option value="it">Информационные технологии</option>
+                        <option value="philosophy">Мета-философия</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPass">Мастер-ключ</label>
+                    <input type="password" id="regPass" placeholder="••••••••" required
+                        style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary); color: var(--text-primary); outline: none;">
+                </div>
+
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; margin-top: 20px; padding: 15px;">Создать аккаунт</button>
+            </form>
+
+            <div class="register-footer">
+                Уже есть доступ? <a href="#" id="openLoginFromReg">Войти в архив</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- UI Elements -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollBar"></div>
+    </div>
+
+    <button class="theme-toggle-btn" id="themeToggle" title="Переключить тему">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <nav class="mobile-dock">
+        <a href="index.html" class="dock-item">
+            <i class="fas fa-home"></i>
+            <span>Главная</span>
+        </a>
+        <a href="catalog.html" class="dock-item">
+            <i class="fas fa-search"></i>
+            <span>Каталог</span>
+        </a>
+        <a href="register.html" class="dock-item active">
+            <i class="fas fa-user-plus"></i>
+            <span>Регистрация</span>
+        </a>
+    </nav>
+
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Дополнительная логика для регистрации (если нужно)
+        document.getElementById('registerForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Запрос на регистрацию отправлен в центральный архив. Ожидайте подтверждения.');
+            window.location.href = 'index.html';
+        });
+
+        document.getElementById('openLoginFromReg')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            // В реальном приложении здесь открывался бы модал, 
+            // но для простоты перенаправим на главную с параметром или просто на главную
+            window.location.href = 'index.html?login=true';
+        });
+    </script>
+</body>
+
+</html>

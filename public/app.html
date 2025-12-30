@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App | NEXUS</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <div class="loader-text glitch" data-text="LOADING INTERFACE...">LOADING INTERFACE...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-cube scanner-effect"></i> NEXUS
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                <li><a href="membership.html" class="nav-link">Доступ</a></li>
+                <li><a href="community.html" class="nav-link">Сообщество</a></li>
+                <li><a href="app.html" class="nav-link active">Приложение</a></li>
+                <li><a href="about.html" class="nav-link">О Нас</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- App Hero -->
+    <section class="section alt-bg" style="padding-top: 150px;">
+        <div class="container app-layout" style="display: flex; align-items: center; gap: 80px;">
+            <div class="app-info scroll-anim" data-anim="slide-left" style="flex: 1;">
+                <h1 class="section-title">NEXUS Mobile <span class="accent-dot">.</span></h1>
+                <p class="hero-subtitle">Ваш персональный книжный терминал в кармане. Синхронизация данных через
+                    квантовую сеть.</p>
+
+                <div class="app-feature-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0;">
+                    <div class="app-feature-item">
+                        <i class="fas fa-bolt neon-text" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                        <h4>Мгновенно</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Загрузка книг за доли секунды через 6G.
+                        </p>
+                    </div>
+                    <div class="app-feature-item">
+                        <i class="fas fa-shield-alt neon-text-purple" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                        <h4>Защищено</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Биометрический доступ и шифрование.</p>
+                    </div>
+                    <div class="app-feature-item">
+                        <i class="fas fa-eye neon-text" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                        <h4>AR-Режим</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Оживляйте персонажей прямо на страницах.
+                        </p>
+                    </div>
+                    <div class="app-feature-item">
+                        <i class="fas fa-language neon-text-purple" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                        <h4>AI Перевод</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Поддержка 500+ языков в реальном
+                            времени.</p>
+                    </div>
+                </div>
+
+                <div class="app-buttons">
+                    <button class="btn btn-neon" style="margin-right: 20px;"><i class="fab fa-apple"></i> APP
+                        STORE</button>
+                    <button class="btn btn-outline"><i class="fab fa-google-play"></i> GOOGLE PLAY</button>
+                </div>
+            </div>
+
+            <div class="app-mockup scroll-anim" data-anim="zoom-in"
+                style="flex: 1; display: flex; justify-content: center;">
+                <div class="phone-frame"
+                    style="width: 320px; height: 650px; border: 8px solid #222; border-radius: 40px; position: relative; background: #000; overflow: hidden; box-shadow: 0 0 50px var(--neon-blue-dim);">
+                    <img src="nexus_mockup.png" alt="Nexus App" class="phone-screen"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+                    <div class="phone-glare"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%); pointer-events: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">NEXUS</div>
+                <p>Ваша мобильная библиотека Будущего.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="membership.html">Доступ</a>
+                <a href="about.html">О Нас</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2077 NEXUS Library.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+/* =========================================
+   ACCESSIBILITY & PERFORMANCE IMPROVEMENTS
+   Senior Developer - Best Practices
+   ========================================= */
+
+/* --- 1. Prefers Reduced Motion (для пользователей с вестибулярными расстройствами) --- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Отключить анимацию частиц */
+    #heroCanvas {
+        display: none !important;
+    }
+
+    /* Отключить reveal анимации */
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* --- 2. Focus-Visible для keyboard navigation --- */
+*:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+/* Убрать outline для мыши */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Особые стили для интерактивных элементов */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* --- 3. Skip Link для screen readers --- */
+.skip-link {
+    position: absolute;
+    top: -48px;
+    left: 16px;
+    background: var(--accent);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 99999;
+    border-radius: 4px;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+/* --- 4. Улучшенные стили для темной темы buttons --- */
+body.dark-theme button:focus-visible,
+body.dark-theme a:focus-visible {
+    outline-color: #A78BFA;
+    /* Более светлый фиолетовый */
+}
+
+/* --- 5. Высокая контрастность для текста --- */
+@media (prefers-contrast: high) {
+    :root {
+        --text-primary: #000000;
+        --text-secondary: #333333;
+    }
+
+    body.dark-theme {
+        --text-primary: #FFFFFF;
+        --text-secondary: #E0E0E0;
+    }
+
+    /* Более контрастные границы */
+    .btn-outline,
+    .price-card,
+    .book-card-minimal {
+        border-width: 2px !important;
+    }
+}
+
+/* --- 6. Улучшенная видимость для link underlines --- */
+a {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    text-decoration-thickness: 3px;
+}
+
+/* --- 7. Touch target минимум 44x44px (WCAG AA) --- */
+@media (pointer: coarse) {
+
+    button,
+    a,
+    .nav-link,
+    .control-btn,
+    .theme-toggle-btn,
+    .mobile-reading-toggle {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* --- 8. Loading state (лучшая UX) --- */
+button[disabled],
+button[aria-busy="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    position: relative;
+}
+
+button[aria-busy="true"]::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- 9. Читаемость текста (лучшее расстояние) --- */
+p,
+li {
+    max-width: 70ch;
+    /* Оптимальная длина строки */
+}
+
+/* --- 10. Темная тема - убрать flickering при загрузке --- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+        color: #FFFFFF;
+    }
+}
+
+/* --- 11. Print styles (бонус!) --- */
+@media print {
+
+    /* Скрыть ненужное при печати */
+    .navbar,
+    .footer,
+    .theme-toggle-btn,
+    .mobile-reading-toggle,
+    .mobile-menu,
+    #heroCanvas {
+        display: none !important;
+    }
+
+    /* Оптимизировать для печати */
+    body {
+        background: white;
+        color: black;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    /* Показать URL после ссылок */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}
+
+/* --- 12. Улучшения для screen readers (sr-only) --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}

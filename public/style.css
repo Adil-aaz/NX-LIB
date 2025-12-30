@@ -1,0 +1,1775 @@
+/* =========================================
+   NEXUS | MINIMALIST REFACTOR
+   Theme: Premium Minimalism / Swiss Style
+   Colors: Monochrome + Blue Accent
+   ========================================= */
+
+/* --- 1. Variables & Global Reset --- */
+:root {
+    --bg-primary: #FDFBF7;
+    /* Milky White */
+    --bg-secondary: #FAFAF5;
+    /* Soft Cream */
+    --bg-tertiary: #F5F2EA;
+    /* Warm Sand */
+    --text-primary: #1A1A1A;
+    --text-secondary: #5A5A5A;
+    --accent: #7C3AED;
+    --accent-hover: #6D28D9;
+    --border-color: #E8E4DB;
+
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --container-max: 1200px;
+    --section-spacing: 120px;
+    --mobile-section-spacing: 40px;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #121212;
+    --bg-tertiary: #1A1A1A;
+    --text-primary: #F5F5F7;
+    --text-secondary: #A0A0A0;
+    --border-color: #2A2A2A;
+}
+
+[data-theme="dark"] .section {
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .stat-number {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .price-card {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] select,
+[data-theme="dark"] input {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+/* Темная тема - специфичные стили */
+body.dark-theme .navbar {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom-color: #333333;
+}
+
+body.dark-theme .footer {
+    background: #0f0f0f;
+    border-top: 1px solid #333333;
+}
+
+/* Hero section темная тема */
+body.dark-theme .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%) !important;
+}
+
+/* Интересный geometric паттерн для секций */
+body.dark-theme .section {
+    position: relative;
+}
+
+body.dark-theme .section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(30deg, transparent 40%, rgba(124, 58, 237, 0.03) 40%, rgba(124, 58, 237, 0.03) 60%, transparent 60%),
+        linear-gradient(150deg, transparent 40%, rgba(124, 58, 237, 0.03) 40%, rgba(124, 58, 237, 0.03) 60%, transparent 60%);
+    background-size: 100px 100px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.dark-theme .section>.container {
+    position: relative;
+    z-index: 1;
+}
+
+body.dark-theme .section:nth-child(even) {
+    background: #242424;
+}
+
+body.dark-theme .section:nth-child(odd) {
+    background: #1a1a1a;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4 {
+    color: #FFFFFF;
+}
+
+body.dark-theme .btn-outline {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+body.dark-theme .btn-outline:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Карточки с хорошим контрастом */
+body.dark-theme .price-card,
+body.dark-theme .book-card-minimal,
+body.dark-theme .modal-content {
+    background: #2a2a2a;
+    border-color: #404040;
+    color: #FFFFFF;
+}
+
+body.dark-theme .price-card.featured {
+    background: linear-gradient(135deg, #2d2d2d, #1f1f1f) !important;
+    border-color: var(--accent);
+}
+
+/* Карточки членства */
+body.dark-theme .price-card h3,
+body.dark-theme .price-card h4,
+body.dark-theme .price-card p,
+body.dark-theme .price-card li {
+    color: #FFFFFF;
+}
+
+body.dark-theme .price-value {
+    color: #FFFFFF;
+}
+
+/* Статистика карточки */
+body.dark-theme .stat-card {
+    background: transparent;
+}
+
+body.dark-theme .stat-card div:first-child {
+    color: var(--accent);
+}
+
+body.dark-theme .stat-card div:last-child {
+    color: #B0B0B0;
+}
+
+/* About.html - контейнеры с белым фоном */
+body.dark-theme .mission-content>div[style*="border"] {
+    background: #2a2a2a !important;
+    border-color: #404040 !important;
+}
+
+/* About.html - карточки команды разработчиков */
+body.dark-theme .price-card[style*="background: white"],
+body.dark-theme .grid-2 .price-card {
+    background: #2a2a2a !important;
+    border: 1px solid #404040 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-theme .price-card h4,
+body.dark-theme .price-card p {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .price-card p[style*="color: var(--accent)"] {
+    color: var(--accent) !important;
+}
+
+/* Все inline светлые фоны в темной теме */
+body.dark-theme [style*="background: #FAFAFA"],
+body.dark-theme [style*="background: #F5F5F5"],
+body.dark-theme [style*="background: linear-gradient(to bottom, #FEFEFE"],
+body.dark-theme [style*="background: var(--bg-secondary)"] {
+    background: #2a2a2a !important;
+}
+
+/* Таблицы в темной теме - БЕЗ зебры */
+body.dark-theme table {
+    background: #2a2a2a;
+    border-color: #404040;
+}
+
+body.dark-theme th {
+    background: #1f1f1f !important;
+    color: #FFFFFF;
+    border-color: #404040;
+}
+
+body.dark-theme td {
+    background: #2a2a2a !important;
+    border-color: #404040;
+    color: #FFFFFF;
+}
+
+body.dark-theme tr {
+    background: #2a2a2a !important;
+}
+
+/* Убираем зебра-эффект */
+body.dark-theme tr:nth-child(even),
+body.dark-theme tr:nth-child(odd) {
+    background: #2a2a2a !important;
+}
+
+body.dark-theme input,
+body.dark-theme textarea {
+    background: #2a2a2a;
+    border-color: #444444;
+    color: #FFFFFF;
+}
+
+body.dark-theme input::placeholder {
+    color: #666666;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Кнопка переключения темы */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 950;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(124, 58, 237, 0.6);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle-btn {
+        bottom: 80px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 950;
+    transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        right: 15px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-primary);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 2. Typography --- */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 65ch;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+/* --- 3. Layout Components --- */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.section {
+    padding: var(--section-spacing) 0;
+}
+
+/* Секция с другим фоном для акцента, но следующая системной теме */
+.section-accent {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-dark-contrast {
+    background: #000;
+    color: #fff;
+}
+
+/* В светлой теме мы хотим, чтобы "Технологическое превосходство" было более мягким, 
+   но все еще контрастным, или полностью следовало теме. 
+   Поскольку пользователь просил, чтобы оно НЕ оставалось черным, исправим это. */
+.section-dark-contrast {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-dark-contrast {
+    background: var(--bg-tertiary);
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* --- 4. Navigation --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.btn-login {
+    padding: 10px 24px;
+    border: 2px solid var(--text-primary);
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #FFFFFF;
+    color: #111111;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-login:hover {
+    background: var(--accent);
+    color: #FFFFFF;
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(124, 58, 237, 0.2);
+}
+
+/* Темная тема - кнопка Войти */
+body.dark-theme .btn-login {
+    background: #FFFFFF;
+    color: #111111;
+    border-color: #FFFFFF;
+}
+
+body.dark-theme .btn-login:hover {
+    background: var(--accent);
+    color: #FFFFFF;
+    border-color: var(--accent);
+}
+
+/* --- 5. Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+}
+
+.btn-outline {
+    border: 1px solid var(--border-color);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: var(--text-primary);
+}
+
+/* --- 6. Hero Section --- */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+#heroCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+}
+
+/* --- 7. Membership Section --- */
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .membership-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 20px !important;
+        padding-bottom: 20px !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        grid-template-columns: none !important;
+    }
+
+    .membership-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .membership-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .price-card {
+        min-width: 80vw;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        margin: 0 !important;
+    }
+}
+
+.price-card {
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card:hover {
+    border-color: var(--text-primary);
+}
+
+.price-card.featured {
+    border-color: var(--accent);
+    background: #F8FAFF;
+}
+
+.price-header h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.price-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.price-value span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.price-features li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- 8. Ecosystem Section --- */
+.ecosystem {
+    background: var(--bg-secondary);
+}
+
+.feature-list {
+    margin-top: 2rem;
+}
+
+.feature-item {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 20px;
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.feature-text h4 {
+    margin-bottom: 0.25rem;
+}
+
+.feature-text p {
+    font-size: 0.95rem;
+}
+
+.phone-mockup-minimal {
+    width: 100%;
+    max-width: 380px;
+    height: 700px;
+    border: 2px solid #333;
+    border-radius: 48px;
+    padding: 12px;
+    background: #000;
+    position: relative;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
+}
+
+.phone-mockup-minimal::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 25px;
+    background: #222;
+    border-radius: 20px;
+}
+
+.phone-screen-minimal {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 38px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- 9. Catalog & Cards --- */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.book-card-minimal {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.book-card-minimal:hover {
+    border-color: var(--text-primary);
+}
+
+.card-img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    background: var(--bg-secondary);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- 10. Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: none;
+    /* JS toggles this */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: var(--bg-primary);
+    padding: 60px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--text-primary);
+}
+
+/* --- 11. FAQ Accordion Styles --- */
+.faq-item {
+    cursor: pointer;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    padding-top: 20px;
+    transition: all 0.3s ease;
+}
+
+
+/* --- 11. Animations & Reveal --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 12. Footer --- */
+.footer {
+    padding: 80px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+/* --- 13. Mobile Hamburger Menu --- */
+.nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border-color);
+    z-index: 999;
+    padding: 100px 30px 30px;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu .nav-link {
+    display: block;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu .btn-login {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    text-align: center;
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* --- 14. Mobile Responsiveness --- */
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .membership-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: var(--mobile-section-spacing);
+    }
+
+    .container {
+        padding: 0 20px;
+        overflow: hidden;
+        /* Prevent child overflow from causing horizontal scroll */
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 140px;
+        padding-bottom: 60px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0 !important;
+    }
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .grid-2 {
+        gap: 40px;
+    }
+
+    /* Улучшенная типографика для мобильных */
+    .philosophy-text {
+        column-count: 1;
+        font-size: 0.95rem;
+    }
+
+    .stat-card {
+        padding: 30px 0 !important;
+    }
+
+    /* Оптимизация карточек */
+    .price-card {
+        padding: 30px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Модальное окно на мобильных */
+    .modal-content {
+        padding: 40px 30px;
+        margin: 20px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    :root {
+        --section-spacing: 50px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        word-break: break-word;
+        /* Prevent long words from breaking layout */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+
+    /* Статистика в 2 колонки */
+    .grid-2[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+
+    .stat-card div:first-child {
+        font-size: 2.5rem !important;
+    }
+
+    .stat-card div:last-child {
+        font-size: 0.65rem !important;
+    }
+
+    /* Карточки цен */
+    .price-card {
+        padding: 25px 20px;
+    }
+
+    .price-value {
+        font-size: 2rem;
+    }
+
+    /* FAQ */
+    .faq-item h4 {
+        font-size: 1rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.9rem;
+    }
+
+    /* Форма newsletter */
+    .grid-2 form {
+        flex-direction: column;
+    }
+
+    .grid-2 form input,
+    .grid-2 form button {
+        width: 100% !important;
+    }
+
+    /* Партнеры */
+    div[style*="display: flex"][style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 50px 0;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+        margin: 15px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+    }
+
+    /* About page - mobile styles */
+    .mission-content h1 {
+        font-size: 2rem !important;
+    }
+
+    .mission-content .hero-subtitle {
+        font-size: 1rem !important;
+    }
+
+    /* Team grid - 2 columns on mobile */
+    .grid-2[style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    .phone-mockup-minimal {
+        max-width: 280px !important;
+        height: 520px !important;
+        padding: 8px !important;
+    }
+
+    .phone-screen-minimal {
+        border-radius: 28px !important;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        height: 65px;
+    }
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .price-value {
+        font-size: 1.75rem;
+    }
+
+    /* About page - single column for team on very small screens */
+    .grid-2[style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* --- 15. Mobile-Specific Features --- */
+/* Улучшенные touch targets для мобильных */
+@media (max-width: 768px) {
+
+    .btn,
+    .nav-link,
+    .faq-question {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Оптимизация скролла */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Улучшенная читаемость */
+    p {
+        line-height: 1.7;
+    }
+
+    /* Sticky header на мобильных */
+    .navbar {
+        backdrop-filter: blur(20px);
+    }
+
+    /* Активные состояния для touch */
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+    .nav-link:active,
+    .book-card-minimal:active {
+        opacity: 0.7;
+    }
+}
+
+/* --- 16. Mobile Reading Mode (специально для смартфонов) --- */
+.mobile-reading-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 900;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.mobile-reading-toggle:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .mobile-reading-toggle {
+        display: flex;
+    }
+
+    /* Режим чтения */
+    body.reading-mode {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    body.reading-mode .navbar,
+    body.reading-mode .footer {
+        display: none;
+    }
+
+    body.reading-mode .hero-content {
+        padding-top: 40px;
+    }
+}
+
+/* --- 17. Landscape Mobile Optimization --- */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        height: 60px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+}
+
+/* --- 18. Catalog & Sidebar Enhancements --- */
+.catalog-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.catalog-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    padding-right: 20px;
+    border-right: 1px solid var(--border-color);
+}
+
+.catalog-sidebar h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+}
+
+.filter-group {
+    margin-bottom: 45px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.filter-option:hover {
+    color: var(--accent);
+}
+
+.filter-option input {
+    accent-color: var(--accent);
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 1024px) {
+    .catalog-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .catalog-sidebar {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-right: 0;
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+
+    .filter-group {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-container {
+        padding: 0 20px;
+    }
+
+    .catalog-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 19. Mobile Swipe Gestures --- */
+@media (max-width: 768px) {
+    .catalog-grid {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Горизонтальный скролл для партнеров на мобильных */
+    .partners-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .partners-scroll::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* --- 19. Accessibility Improvements for Mobile --- */
+@media (max-width: 768px) {
+
+    /* Увеличенные области нажатия */
+    .faq-question {
+        padding: 15px 0;
+    }
+
+    /* Лучшая видимость фокуса */
+    .btn:focus,
+    .nav-link:focus,
+    input:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+    }
+
+    /* Предотвращение случайных нажатий */
+    .btn {
+        touch-action: manipulation;
+    }
+}
+
+/* --- 20. Mobile Performance Optimizations --- */
+@media (max-width: 768px) {
+
+    /* Упрощение анимаций для производительности */
+    * {
+        animation-duration: 0.3s !important;
+        transition-duration: 0.2s !important;
+    }
+
+    .reveal {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Оптимизация изображений */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* --- 21. Advanced Mobile UX Features --- */
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 2000;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* Mobile Action Dock (Bottom Navigation) */
+.mobile-dock {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme .mobile-dock {
+    background: rgba(15, 15, 15, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.65rem;
+    font-weight: 500;
+    gap: 4px;
+    transition: all 0.2s ease;
+}
+
+.dock-item i {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.dock-item.active {
+    color: var(--accent);
+}
+
+.dock-item.active i {
+    color: var(--accent);
+}
+
+.dock-item:active {
+    transform: scale(0.9);
+}
+
+/* Floating Action Button (FAB) / Back to Top enhancement */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 950;
+    border: none;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    transform: translateY(20px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .mobile-dock {
+        display: flex;
+    }
+
+    /* Reposition toggles for mobile to avoid dock overlay */
+    .theme-toggle-btn {
+        bottom: 140px !important;
+        right: 15px !important;
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .back-to-top {
+        bottom: 80px !important;
+        right: 15px !important;
+    }
+}
+
+/* --- Patterns & Backgrounds --- */
+.pattern-bg {
+    background-color: var(--bg-primary);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-theme.pattern-bg {
+    background-color: #111;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* --- 22. Specific Section Fixes --- */
+.grid-4-mobile {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+    .grid-4-mobile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-4-mobile {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card div:first-child {
+        font-size: 2.2rem !important;
+        /* Decrease large stat numbers */
+    }
+}
+
+.newsletter-form-container form {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+    .newsletter-form-container form {
+        flex-direction: column;
+    }
+
+    .newsletter-form-container form input,
+    .newsletter-form-container form button {
+        width: 100% !important;
+    }
+}
+
+/* --- 23. Catalog & Book Grid Mobile Fixes --- */
+@media (max-width: 768px) {
+    .hero-grid-mobile {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+
+    .hero-grid-mobile>div {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    /* Stats in hero */
+    .hero-grid-mobile>div[style*="display: flex"] {
+        justify-content: center !important;
+        gap: 20px !important;
+    }
+}
+
+.catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+@media (max-width: 480px) {
+    .catalog-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 20px !important;
+        padding-bottom: 20px !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        grid-template-columns: none !important;
+        /* Disable grid */
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .catalog-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .catalog-grid {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .book-card-minimal {
+        min-width: 85vw;
+        /* Increased from 260px to meet user's "normal size" request */
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        /* Center-align for better focus on large cards */
+        margin: 0 !important;
+    }
+}
+
+/* --- 24. Table & About Page Mobile Fixes --- */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        padding: 12px 10px !important;
+    }
+
+    /* About page team grid - Horizontal scroll */
+    .grid-2[style*="grid-template-columns: repeat(3, 1fr)"],
+    .grid-2[style*="grid-template-columns: repeat(4, 1fr)"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 20px !important;
+        padding-bottom: 20px !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        grid-template-columns: none !important;
+    }
+
+    .grid-2[style*="grid-template-columns: repeat(3, 1fr)"]::-webkit-scrollbar,
+    .grid-2[style*="grid-template-columns: repeat(4, 1fr)"]::-webkit-scrollbar {
+        display: none;
+    }
+
+    .grid-2[style*="grid-template-columns: repeat(3, 1fr)"] .price-card,
+    .grid-2[style*="grid-template-columns: repeat(3, 1fr)"] .stat-card,
+    .grid-2[style*="grid-template-columns: repeat(4, 1fr)"] .stat-card {
+        min-width: 80vw;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        margin: 0 !important;
+    }
+}
+
+/* Fix for horizontal text that might be too long */
+.logo,
+h1,
+h2,
+h3 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* --- 25. Universal Mobile Fixes (Final Polish) --- */
+@media (max-width: 480px) {
+
+    html,
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    .container {
+        padding: 0 15px !important;
+    }
+
+    .section {
+        padding: 60px 0 !important;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 2.2rem !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+}

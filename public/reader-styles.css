@@ -1,0 +1,325 @@
+/* =========================================
+   READER MODE STYLES
+   Clean reading interface with theme support
+   ========================================= */
+
+/* --- Default (Light Theme) --- */
+body {
+    background: #FFFFFF;
+    color: #111111;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* --- Dark Theme --- */
+body.theme-dark {
+    background: #0A0A0F;
+    color: #E5E5E5;
+}
+
+body.theme-dark .reader-nav {
+    background: rgba(15, 15, 20, 0.95);
+    border-bottom-color: rgba(124, 58, 237, 0.2);
+}
+
+body.theme-dark .chapter-title {
+    color: #FFFFFF;
+}
+
+body.theme-dark .text-content {
+    color: #D5D5D5;
+}
+
+/* --- Sepia Theme --- */
+body.theme-sepia {
+    background: #F4ECD8;
+    color: #5C4B37;
+}
+
+body.theme-sepia .reader-nav {
+    background: rgba(228, 211, 183, 0.95);
+    border-bottom-color: rgba(140, 108, 72, 0.3);
+}
+
+body.theme-sepia .chapter-title,
+body.theme-sepia .text-content {
+    color: #3E2F1F;
+}
+
+body.theme-sepia .control-btn {
+    background: rgba(140, 108, 72, 0.1);
+    border-color: rgba(140, 108, 72, 0.3);
+}
+
+/* --- Progress Bar --- */
+.read-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(124, 58, 237, 0.1);
+    z-index: 9999;
+}
+
+.read-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #7C3AED, #6D28D9);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* --- Reader Navigation --- */
+.reader-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #E5E5E5;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    justify-content: space-between;
+}
+
+.reader-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.back-btn {
+    color: #111111;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s;
+}
+
+.back-btn:hover {
+    color: #7C3AED;
+}
+
+.book-title-header {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.reader-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 6px;
+    color: #111111;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(124, 58, 237, 0.3);
+    border-color: #7C3AED;
+}
+
+.control-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.font-size-display {
+    min-width: 50px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(124, 58, 237, 0.2);
+    margin: 0 5px;
+}
+
+/* --- Reader Content --- */
+.reader-content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 40px 100px;
+    min-height: 100vh;
+}
+
+.chapter-header {
+    margin-bottom: 60px;
+}
+
+.chapter-title {
+    font-size: 2.5rem;
+    color: #111111;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.chapter-meta {
+    display: flex;
+    gap: 30px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.chapter-meta i {
+    color: #7C3AED;
+    margin-right: 8px;
+}
+
+/* --- Text Content --- */
+.text-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.text-content p {
+    margin-bottom: 1.5rem;
+    max-width: none;
+}
+
+.text-content .highlight-text {
+    color: #7C3AED;
+    font-weight: 600;
+}
+
+.text-content blockquote {
+    margin: 2rem 0;
+    padding: 20px 30px;
+    border-left: 4px solid #7C3AED;
+    background: rgba(124, 58, 237, 0.05);
+    font-style: italic;
+    color: inherit;
+}
+
+.cyber-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #7C3AED, transparent);
+    margin: 3rem 0;
+}
+
+/* --- Chapter Footer --- */
+.chapter-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.nav-chapter-btn {
+    padding: 12px 24px;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 6px;
+    color: #E5E5E5;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-chapter-btn:hover:not(.disabled) {
+    background: rgba(124, 58, 237, 0.3);
+    border-color: #7C3AED;
+}
+
+.nav-chapter-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .reader-nav {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .reader-nav-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .book-title-header {
+        font-size: 0.75rem;
+    }
+
+    .reader-controls {
+        gap: 8px;
+    }
+
+    .control-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .font-size-display {
+        display: none;
+    }
+
+    .reader-content-wrapper {
+        padding: 100px 20px 80px;
+    }
+
+    .chapter-title {
+        font-size: 1.8rem;
+    }
+
+    .text-content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .chapter-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-chapter-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .reader-nav-left {
+        gap: 2px;
+    }
+
+    .back-btn {
+        font-size: 0.85rem;
+    }
+
+    .chapter-title {
+        font-size: 1.5rem;
+    }
+
+    .text-content {
+        font-size: 0.95rem;
+    }
+}
