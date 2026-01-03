@@ -21,13 +21,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NX-LIB - The Digital Archive Project</title>
+    <title>NX-LIB | Цифровой Архив</title>
 
     <!-- Meta Tags for SEO -->
     <meta name="description"
-        content="NX-LIB is a premier digital library dedicated to the preservation of human knowledge through minimal design and maximum accessibility.">
-    <meta name="keywords" content="digital library, book archive, minimalism, nexus library, nx-lib, swiss design">
+        content="NX-LIB — это децентрализованный цифровой архив, созданный для сохранения и структурирования мирового культурного и научного наследия.">
+    <meta name="keywords" content="цифровая библиотека, книжный архив, минимализм, nexus library, nx-lib, швейцарский дизайн">
     <meta name="author" content="NX-LIB Core Team">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "NX-LIB",
+          "url": "https://nx-lib.org/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://nx-lib.org/catalog?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Library",
+          "name": "NX-LIB",
+          "url": "https://nx-lib.org/",
+          "logo": "https://nx-lib.org/logo.png",
+          "description": "NX-LIB — это децентрализованный цифровой архив, созданный для сохранения и структурирования мирового культурного и научного наследия."
+        }
+      ]
+    }
+    </script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nx-lib.org/">
+    <meta property="og:title" content="NX-LIB | Цифровой Архив">
+    <meta property="og:description"
+        content="NX-LIB — это децентрализованный цифровой архив, созданный для сохранения и структурирования мирового культурного и научного наследия.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nx-lib.org/">
+    <meta property="twitter:title" content="NX-LIB | Цифровой Архив">
+    <meta property="twitter:description"
+        content="NX-LIB — это децентрализованный цифровой архив, созданный для сохранения и структурирования мирового культурного и научного наследия.">
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200">
 
     <!-- Fonts: Inter for that clean, professional grotesque look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -259,7 +303,7 @@
                 <div class="book-card-minimal reveal" style="border: none; padding: 0;">
                     <div class="card-img" style="aspect-ratio: 16/9; background: #000;">
                         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600"
-                            alt="Architecture">
+                            alt="Архитектура Мысли">
                     </div>
                     <h3 style="margin-top: 24px;">Архитектура Мысли</h3>
                     <p style="font-size: 0.95rem;">Собрание трудов о дизайне, урбанизме и конструировании будущего.</p>
@@ -268,7 +312,7 @@
                 <div class="book-card-minimal reveal" style="border: none; padding: 0;">
                     <div class="card-img" style="aspect-ratio: 16/9; background: #000;">
                         <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&q=80&w=600"
-                            alt="Cybernetics">
+                            alt="Кибернетическое наследие">
                     </div>
                     <h3 style="margin-top: 24px;">Кибернетическое наследие</h3>
                     <p style="font-size: 0.95rem;">История вычислительной техники и истоки искусственного интеллекта.
@@ -278,7 +322,7 @@
                 <div class="book-card-minimal reveal" style="border: none; padding: 0;">
                     <div class="card-img" style="aspect-ratio: 16/9; background: #000;">
                         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=600"
-                            alt="Poetry">
+                            alt="Пост-Гуманизм">
                     </div>
                     <h3 style="margin-top: 24px;">Пост-Гуманизм</h3>
                     <p style="font-size: 0.95rem;">Современная философия о месте человека в мире машин и технологий.</p>
