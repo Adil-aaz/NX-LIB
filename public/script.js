@@ -428,7 +428,6 @@ function initThemeToggle() {
         const savedTheme = localStorage.getItem('nx-lib-theme');
         if (savedTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
-            document.body.classList.add('dark-theme');
             const icon = themeToggle.querySelector('i');
             if (icon) {
                 icon.classList.remove('fa-moon');
@@ -441,7 +440,6 @@ function initThemeToggle() {
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
             document.documentElement.setAttribute('data-theme', newTheme);
-            document.body.classList.toggle('dark-theme', newTheme === 'dark');
 
             const icon = themeToggle.querySelector('i');
             if (icon) {

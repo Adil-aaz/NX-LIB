@@ -55,27 +55,27 @@
 }
 
 /* Темная тема - специфичные стили */
-body.dark-theme .navbar {
+[data-theme="dark"] .navbar {
     background: rgba(26, 26, 26, 0.95);
     border-bottom-color: #333333;
 }
 
-body.dark-theme .footer {
+[data-theme="dark"] .footer {
     background: #0f0f0f;
     border-top: 1px solid #333333;
 }
 
 /* Hero section темная тема */
-body.dark-theme .hero {
+[data-theme="dark"] .hero {
     background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%) !important;
 }
 
 /* Интересный geometric паттерн для секций */
-body.dark-theme .section {
+[data-theme="dark"] .section {
     position: relative;
 }
 
-body.dark-theme .section::before {
+[data-theme="dark"] .section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -91,143 +91,143 @@ body.dark-theme .section::before {
     z-index: 0;
 }
 
-body.dark-theme .section>.container {
+[data-theme="dark"] .section>.container {
     position: relative;
     z-index: 1;
 }
 
-body.dark-theme .section:nth-child(even) {
+[data-theme="dark"] .section:nth-child(even) {
     background: #242424;
 }
 
-body.dark-theme .section:nth-child(odd) {
+[data-theme="dark"] .section:nth-child(odd) {
     background: #1a1a1a;
 }
 
-body.dark-theme h1,
-body.dark-theme h2,
-body.dark-theme h3,
-body.dark-theme h4 {
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 {
     color: #FFFFFF;
 }
 
-body.dark-theme .btn-outline {
+[data-theme="dark"] .btn-outline {
     border-color: var(--accent);
     color: var(--accent);
     background: transparent;
 }
 
-body.dark-theme .btn-outline:hover {
+[data-theme="dark"] .btn-outline:hover {
     background: var(--accent);
     color: white;
 }
 
 /* Карточки с хорошим контрастом */
-body.dark-theme .price-card,
-body.dark-theme .book-card-minimal,
-body.dark-theme .modal-content {
+[data-theme="dark"] .price-card,
+[data-theme="dark"] .book-card-minimal,
+[data-theme="dark"] .modal-content {
     background: #2a2a2a;
     border-color: #404040;
     color: #FFFFFF;
 }
 
-body.dark-theme .price-card.featured {
+[data-theme="dark"] .price-card.featured {
     background: linear-gradient(135deg, #2d2d2d, #1f1f1f) !important;
     border-color: var(--accent);
 }
 
 /* Карточки членства */
-body.dark-theme .price-card h3,
-body.dark-theme .price-card h4,
-body.dark-theme .price-card p,
-body.dark-theme .price-card li {
+[data-theme="dark"] .price-card h3,
+[data-theme="dark"] .price-card h4,
+[data-theme="dark"] .price-card p,
+[data-theme="dark"] .price-card li {
     color: #FFFFFF;
 }
 
-body.dark-theme .price-value {
+[data-theme="dark"] .price-value {
     color: #FFFFFF;
 }
 
 /* Статистика карточки */
-body.dark-theme .stat-card {
+[data-theme="dark"] .stat-card {
     background: transparent;
 }
 
-body.dark-theme .stat-card div:first-child {
+[data-theme="dark"] .stat-card div:first-child {
     color: var(--accent);
 }
 
-body.dark-theme .stat-card div:last-child {
+[data-theme="dark"] .stat-card div:last-child {
     color: #B0B0B0;
 }
 
 /* About.html - контейнеры с белым фоном */
-body.dark-theme .mission-content>div[style*="border"] {
+[data-theme="dark"] .mission-content>div[style*="border"] {
     background: #2a2a2a !important;
     border-color: #404040 !important;
 }
 
 /* About.html - карточки команды разработчиков */
-body.dark-theme .price-card[style*="background: white"],
-body.dark-theme .grid-2 .price-card {
+[data-theme="dark"] .price-card[style*="background: white"],
+[data-theme="dark"] .grid-2 .price-card {
     background: #2a2a2a !important;
     border: 1px solid #404040 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
-body.dark-theme .price-card h4,
-body.dark-theme .price-card p {
+[data-theme="dark"] .price-card h4,
+[data-theme="dark"] .price-card p {
     color: #FFFFFF !important;
 }
 
-body.dark-theme .price-card p[style*="color: var(--accent)"] {
+[data-theme="dark"] .price-card p[style*="color: var(--accent)"] {
     color: var(--accent) !important;
 }
 
 /* Все inline светлые фоны в темной теме */
-body.dark-theme [style*="background: #FAFAFA"],
-body.dark-theme [style*="background: #F5F5F5"],
-body.dark-theme [style*="background: linear-gradient(to bottom, #FEFEFE"],
-body.dark-theme [style*="background: var(--bg-secondary)"] {
+[data-theme="dark"] [style*="background: #FAFAFA"],
+[data-theme="dark"] [style*="background: #F5F5F5"],
+[data-theme="dark"] [style*="background: linear-gradient(to bottom, #FEFEFE"],
+[data-theme="dark"] [style*="background: var(--bg-secondary)"] {
     background: #2a2a2a !important;
 }
 
 /* Таблицы в темной теме - БЕЗ зебры */
-body.dark-theme table {
+[data-theme="dark"] table {
     background: #2a2a2a;
     border-color: #404040;
 }
 
-body.dark-theme th {
+[data-theme="dark"] th {
     background: #1f1f1f !important;
     color: #FFFFFF;
     border-color: #404040;
 }
 
-body.dark-theme td {
+[data-theme="dark"] td {
     background: #2a2a2a !important;
     border-color: #404040;
     color: #FFFFFF;
 }
 
-body.dark-theme tr {
+[data-theme="dark"] tr {
     background: #2a2a2a !important;
 }
 
 /* Убираем зебра-эффект */
-body.dark-theme tr:nth-child(even),
-body.dark-theme tr:nth-child(odd) {
+[data-theme="dark"] tr:nth-child(even),
+[data-theme="dark"] tr:nth-child(odd) {
     background: #2a2a2a !important;
 }
 
-body.dark-theme input,
-body.dark-theme textarea {
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
     background: #2a2a2a;
     border-color: #444444;
     color: #FFFFFF;
 }
 
-body.dark-theme input::placeholder {
+[data-theme="dark"] input::placeholder {
     color: #666666;
 }
 
@@ -484,13 +484,13 @@ a {
 }
 
 /* Темная тема - кнопка Войти */
-body.dark-theme .btn-login {
+[data-theme="dark"] .btn-login {
     background: #FFFFFF;
     color: #111111;
     border-color: #FFFFFF;
 }
 
-body.dark-theme .btn-login:hover {
+[data-theme="dark"] .btn-login:hover {
     background: var(--accent);
     color: #FFFFFF;
     border-color: var(--accent);
@@ -1503,7 +1503,7 @@ body.dark-theme .btn-login:hover {
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
 }
 
-body.dark-theme .mobile-dock {
+[data-theme="dark"] .mobile-dock {
     background: rgba(15, 15, 15, 0.9);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1593,7 +1593,7 @@ body.dark-theme .mobile-dock {
     transition: background-color 0.3s ease;
 }
 
-body.dark-theme.pattern-bg {
+[data-theme="dark"].pattern-bg {
     background-color: #111;
     background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
@@ -1742,6 +1742,31 @@ h3 {
 }
 
 /* --- 25. Universal Mobile Fixes (Final Polish) --- */
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.toast.show {
+    bottom: 30px;
+}
+
+.toast.error {
+    background: #e53e3e; /* Red for errors */
+}
+
 @media (max-width: 480px) {
 
     html,

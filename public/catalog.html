@@ -407,99 +407,10 @@
 
         <script src="script.js"></script>
         <script src="particles.js"></script>
+        <script src="catalog.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 new ParticleBackground('heroCanvas');
-
-                let allBooks = [];
-
-                // 1. Загрузка книг
-                async function fetchBooks() {
-                    try {
-                        const response = await fetch('/api/books');
-                        allBooks = await response.json();
-                        renderBooks(allBooks);
-                    } catch (err) {
-                        console.error('Ошибка загрузки книг:', err);
-                        document.getElementById('bookGrid').innerHTML = '<p style="color: red;">Ошибка связи с сервером.</p>';
-                    }
-                }
-
-                // 2. Отрисовка карточек
-                function renderBooks(books) {
-                    const grid = document.getElementById('bookGrid');
-                    const countDisplay = document.getElementById('resultsCount');
-                    grid.innerHTML = '';
-                    countDisplay.textContent = `Найдено ${books.length} изданий`;
-
-                    if (books.length === 0) {
-                        grid.innerHTML = `
-                            <div style="grid-column: 1/-1; text-align: center; padding: 100px 0; opacity: 0.5;">
-                                <i class="fas fa-book-open" style="font-size: 3rem; margin-bottom: 20px;"></i>
-                                <h3>Архив пуст</h3>
-                                <p>Добавьте первую книгу через панель выше.</p>
-                            </div>
-                        `;
-                        return;
-                    }
-
-                    books.forEach(book => {
-                        const card = document.createElement('div');
-                        card.className = 'book-card-minimal reveal active';
-                        card.innerHTML = `
-                            <div class="card-img" style="aspect-ratio: 2/3; position: relative; overflow: hidden; border-radius: 8px;">
-                                <img src="${book.imageUrl || 'https://via.placeholder.com/400x600?text=No+Cover'}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <h4 style="margin-top: 15px; margin-bottom: 5px;">${book.title}</h4>
-                            <p style="font-size: 0.85rem; color: var(--text-secondary);">${book.author}</p>
-                            <div style="margin-top: 10px; font-size: 0.75rem; color: var(--accent); font-weight: 700;">$${book.price}</div>
-                            <a href="reader.html?id=${book._id}" class="btn btn-outline" style="width: 100%; margin-top: 20px; font-size: 0.85rem;">Читать</a>
-                        `;
-                        grid.appendChild(card);
-                    });
-                }
-
-                // 3. Поиск (фильтрация на лету)
-                document.getElementById('catalogSearch').addEventListener('input', (e) => {
-                    const term = e.target.value.toLowerCase();
-                    const filtered = allBooks.filter(b =>
-                        b.title.toLowerCase().includes(term) ||
-                        b.author.toLowerCase().includes(term)
-                    );
-                    renderBooks(filtered);
-                });
-
-                // 4. Добавление новой книги (POST)
-                document.getElementById('addBookForm').addEventListener('submit', async (e) => {
-                    e.preventDefault();
-
-                    const bookData = {
-                        title: document.getElementById('addTitle').value,
-                        author: document.getElementById('addAuthor').value,
-                        price: Number(document.getElementById('addPrice').value),
-                        imageUrl: document.getElementById('addImage').value
-                    };
-
-                    try {
-                        const res = await fetch('/api/books', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(bookData)
-                        });
-
-                        if (res.ok) {
-                            e.target.reset();
-                            fetchBooks(); // Обновляем список
-                        } else {
-                            alert('Ошибка при сохранении книги');
-                        }
-                    } catch (err) {
-                        console.error('Ошибка отправки:', err);
-                    }
-                });
-
-                // Инициализация
-                fetchBooks();
             });
         </script>
 </body>
