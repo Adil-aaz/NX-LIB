@@ -1553,7 +1553,7 @@ a {
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 950;
     border: none;
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
